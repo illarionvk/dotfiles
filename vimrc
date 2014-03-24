@@ -94,7 +94,7 @@ nnoremap <C-l> <C-w>l
 
 " Automatic fold settings for specific files. Uncomment to use.
 " autocmd FileType ruby setlocal foldmethod=syntax
-autocmd FileType css  setlocal foldmethod=indent shiftwidth=2 tabstop=2
+autocmd FileType css setlocal foldmethod=indent nofoldenable shiftwidth=2 tabstop=2
 
 " Settings for Markdown files
 autocmd FileType markdown setlocal spell spelllang=en_us,ru_yo,pl
@@ -105,8 +105,10 @@ autocmd FileType tex setlocal textwidth=80
 
 autocmd FileType plaintex setlocal spell spelllang=en_us,ru_yo,pl
 autocmd FileType plaintex setlocal textwidth=80
-" autocmd BufRead,BufNewFile *.markdown setlocal textwidth=80
 
 " vim-javascript bundle options
 let javascript_enable_domhtmlcss=1
 let b:javascript_fold=0
+
+" vim-coffee-script bundle options
+autocmd BufNewFile,BufReadPost *.coffee setl foldmethod=indent nofoldenable shiftwidth=2 expandtab
