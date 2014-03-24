@@ -107,3 +107,6 @@ autocmd FileType plaintex setlocal spell spelllang=en_us,ru_yo,pl
 autocmd FileType plaintex setlocal textwidth=80
 " autocmd BufRead,BufNewFile *.markdown setlocal textwidth=80
 
+" vim-javascript bundle options
+let javascript_enable_domhtmlcss=1
+let b:javascript_fold=0
