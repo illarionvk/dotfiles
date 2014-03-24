@@ -96,6 +96,9 @@ nnoremap <C-l> <C-w>l
 " autocmd FileType ruby setlocal foldmethod=syntax
 autocmd FileType css setlocal foldmethod=indent nofoldenable shiftwidth=2 tabstop=2
 
+autocmd BufNewFile,BufReadPost *.liquid setl ft=liquid.html
+autocmd BufNewFile,BufReadPost *.css.liquid setl ft=liquid.css
+
 " Settings for Markdown files
 autocmd FileType markdown setlocal spell spelllang=en_us,ru_yo,pl
 autocmd FileType markdown setlocal textwidth=80
@@ -112,3 +115,10 @@ let b:javascript_fold=0
 
 " vim-coffee-script bundle options
 autocmd BufNewFile,BufReadPost *.coffee setl foldmethod=indent nofoldenable shiftwidth=2 expandtab
+
+" ultisnips snippets parameters
+"let g:UltiSnipsUsePythonVersion = 2
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+let g:UltiSnipsEditSplit="horizontal"
