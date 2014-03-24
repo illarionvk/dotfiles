@@ -99,5 +99,11 @@ autocmd FileType css  setlocal foldmethod=indent shiftwidth=2 tabstop=2
 " Settings for Markdown files
 autocmd FileType markdown setlocal spell spelllang=en_us,ru_yo,pl
 autocmd FileType markdown setlocal textwidth=80
+
+autocmd FileType tex setlocal spell spelllang=en_us,ru_yo,pl
+autocmd FileType tex setlocal textwidth=80
+
+autocmd FileType plaintex setlocal spell spelllang=en_us,ru_yo,pl
+autocmd FileType plaintex setlocal textwidth=80
 " autocmd BufRead,BufNewFile *.markdown setlocal textwidth=80
 
