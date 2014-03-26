@@ -85,13 +85,6 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
-" Controversial...swap colon and semicolon for easier commands
-"nnoremap ; :
-"nnoremap : ;
-
-"vnoremap ; :
-"vnoremap : ;
-
 " Automatic fold settings for specific files. Uncomment to use.
 " autocmd FileType ruby setlocal foldmethod=syntax
 autocmd FileType css setlocal foldmethod=indent nofoldenable shiftwidth=2 tabstop=2
@@ -103,11 +96,9 @@ autocmd BufNewFile,BufReadPost *.css.liquid setl ft=liquid.css
 autocmd FileType markdown setlocal spell spelllang=en_us,ru_yo,pl
 autocmd FileType markdown setlocal textwidth=80
 
-autocmd FileType tex setlocal spell spelllang=en_us,ru_yo,pl
-autocmd FileType tex setlocal textwidth=80
-
-autocmd FileType plaintex setlocal spell spelllang=en_us,ru_yo,pl
-autocmd FileType plaintex setlocal textwidth=80
+autocmd BufNewFile,BufReadPost *.tex setl ft=tex
+autocmd FileType tex setlocal textwidth=80 spell spelllang=en_us,ru_yo,pl
+autocmd FileType plaintex setlocal textwidth=80 spell spelllang=en_us,ru_yo,pl
 
 " vim-javascript bundle options
 let javascript_enable_domhtmlcss=1
