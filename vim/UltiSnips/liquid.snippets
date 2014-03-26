@@ -1,0 +1,54 @@
+# Generic Tags
+snippet %
+{% ${1} %}${2}
+endsnippet
+
+snippet %%
+{% ${1:tag_name} %}
+	${2}
+{% end$1 %}
+endsnippet
+
+snippet {
+{{ ${1} }}${2}
+endsnippet
+
+# Template Tags
+
+snippet #
+{% comment %}
+	${VISUAL:This is a comment}
+{% endcomment %}
+endsnippet
+
+snippet comment
+{% comment %}
+	${1}
+{% endcomment %}
+endsnippet
+
+snippet for
+{% for ${1} in ${2} %}
+	${3}
+{% endfor %}
+endsnippet
+
+snippet if
+{% if ${1} %}
+	${2}
+{% endif %}
+endsnippet
+
+snippet else
+{% else %}
+	${1}
+endsnippet
+
+snippet include
+{% include '${1}' %}
+endsnippet
+
+# Filters
+
+
+# vim:ft=snippets:
