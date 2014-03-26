@@ -89,9 +89,6 @@ nnoremap <C-l> <C-w>l
 " autocmd FileType ruby setlocal foldmethod=syntax
 autocmd FileType css setlocal foldmethod=indent nofoldenable shiftwidth=2 tabstop=2
 
-autocmd BufNewFile,BufReadPost *.liquid setl ft=liquid.html
-autocmd BufNewFile,BufReadPost *.css.liquid setl ft=liquid.css
-
 " Settings for Markdown files
 autocmd FileType markdown setlocal spell spelllang=en_us,ru_yo,pl
 autocmd FileType markdown setlocal textwidth=80
@@ -99,6 +96,11 @@ autocmd FileType markdown setlocal textwidth=80
 autocmd BufNewFile,BufReadPost *.tex setl ft=tex
 autocmd FileType tex setlocal textwidth=80 spell spelllang=en_us,ru_yo,pl
 autocmd FileType plaintex setlocal textwidth=80 spell spelllang=en_us,ru_yo,pl
+
+" vim-liquid: Set subtype for Shopify alternate templates
+au BufNewFile,BufRead */templates/**.liquid,*/layout/**.liquid,*/snippets/**.liquid
+      \ let b:liquid_subtype = 'html' |
+      \ set ft=liquid |
 
 " vim-javascript bundle options
 let javascript_enable_domhtmlcss=1
