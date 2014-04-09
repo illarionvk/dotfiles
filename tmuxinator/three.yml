@@ -1,7 +1,7 @@
-# ~/.tmuxinator/theme.yml
+# ~/.tmuxinator/three.yml
 
-name: theme
-root: ~/sites/theme/
+name: three
+root: ~/sites/
 
 # Optional tmux socket
 # socket_name: foo
@@ -26,5 +26,5 @@ windows:
         - #empty
         - #empty
         - #empty
-        - extra:
-          - tmux set-option -t theme pane-active-border-bg green
+        - extra: 
+          - tmux set-option -t three pane-active-border-bg blue

@@ -1,7 +1,7 @@
 # ~/.tmuxinator/shopify.yml
 
-name: shopify
-root: ~/sites/shopify/
+name: one
+root: ~/sites/
 
 # Optional tmux socket
 # socket_name: foo
@@ -27,4 +27,4 @@ windows:
         - #empty
         - #empty
         - extra: 
-          - tmux set-option -t shopify pane-active-border-bg yellow
+          - tmux set-option -t one pane-active-border-bg yellow

@@ -1,0 +1,31 @@
+# ~/.tmuxinator/five.yml
+
+name: five
+root: ~/sites/
+
+# Optional tmux socket
+# socket_name: foo
+
+# Runs before everything. Use it to start daemons etc.
+# pre: sudo /etc/rc.d/mysqld start
+
+# Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
+# pre_window: rbenv shell 2.0.0-p247
+
+# Pass command line options to tmux. Useful for specifying a different tmux.conf.
+# tmux_options: -f ~/.tmux.mac.conf
+
+# Change the command to call tmux.  This can be used by derivatives/wrappers like byobu.
+# tmux_command: byobu
+
+windows:
+  - editor:
+      #layout: cc55,270x75,0,0{188x75,0,0[188x59,0,0,8,188x15,0,60{94x15,0,60,32,93x15,95,60,33}],81x75,189,0,31}
+      layout: ae58,270x75,0,0[270x59,0,0,7,270x15,0,60{80x15,0,60,8,94x15,81,60,27,94x15,176,60,29}]
+      panes:
+        - #empty
+        - #empty
+        - #empty
+        - extra: 
+          # Bright Magenta (13) for background color
+          - tmux set-option -t five pane-active-border-bg colour13
