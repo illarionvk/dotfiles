@@ -101,6 +101,9 @@ autocmd FileType plaintex setlocal textwidth=80 spell spelllang=en_us,ru_yo,pl
 au BufNewFile,BufRead */templates/**.liquid,*/layout/**.liquid,*/snippets/**.liquid
       \ let b:liquid_subtype = 'html' |
       \ set ft=liquid |
+au BufNewFile,BufRead */assets/**.js.liquid
+      \ let b:liquid_subtype = 'javascript' |
+      \ set ft=liquid |
 
 " vim-javascript bundle options
 let javascript_enable_domhtmlcss=1
