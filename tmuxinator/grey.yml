@@ -1,7 +1,7 @@
-# ~/.tmuxinator/three.yml
+# ~/.tmuxinator/grey.yml
 
-name: three
-root: ~/sites/
+name: grey
+root: ~/dev/
 
 # Optional tmux socket
 # socket_name: foo
@@ -19,7 +19,7 @@ root: ~/sites/
 # tmux_command: byobu
 
 windows:
-  - editor:
+  - window_one:
       #layout: cc55,270x75,0,0{188x75,0,0[188x59,0,0,8,188x15,0,60{94x15,0,60,32,93x15,95,60,33}],81x75,189,0,31}
       layout: ae58,270x75,0,0[270x59,0,0,7,270x15,0,60{80x15,0,60,8,94x15,81,60,27,94x15,176,60,29}]
       panes:
@@ -27,4 +27,20 @@ windows:
         - #empty
         - #empty
         - extra: 
-          - tmux set-option -t three pane-active-border-bg blue
+          - tmux set-option -t grey pane-active-border-bg colour11
+  - window_two:
+      #layout: cc55,270x75,0,0{188x75,0,0[188x59,0,0,8,188x15,0,60{94x15,0,60,32,93x15,95,60,33}],81x75,189,0,31}
+      layout: ae58,270x75,0,0[270x59,0,0,7,270x15,0,60{80x15,0,60,8,94x15,81,60,27,94x15,176,60,29}]
+      panes:
+        - #empty
+        - #empty
+        - #empty
+        - #empty
+  - window_three:
+      #layout: cc55,270x75,0,0{188x75,0,0[188x59,0,0,8,188x15,0,60{94x15,0,60,32,93x15,95,60,33}],81x75,189,0,31}
+      layout: ae58,270x75,0,0[270x59,0,0,7,270x15,0,60{80x15,0,60,8,94x15,81,60,27,94x15,176,60,29}]
+      panes:
+        - #empty
+        - #empty
+        - #empty
+        - #empty
