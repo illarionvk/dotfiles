@@ -53,8 +53,8 @@ set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{exists('*CapsLockStatusline')?CapsLo
 set clipboard=unnamed
 
 let g:netrw_liststyle=3 " Use tree-mode as default view
-let g:netrw_browse_split=4 " Open file in previous buffer
-let g:netrw_preview=1 " preview window shown in a vertically split
+"let g:netrw_browse_split=4 " Open file in previous buffer
+"let g:netrw_preview=1 " preview window shown in a vertically split
 
 " Treat <li> and <p> tags like the block tags they are
 let g:html_indent_tags = 'li\|p'
