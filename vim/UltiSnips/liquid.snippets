@@ -18,7 +18,7 @@ endsnippet
 # Enter visual mode, press <tab>, insert #, press <tab> again
 snippet #
 {% comment %}
-	${VISUAL:This is a comment}
+	${VISUAL}${1}
 {% endcomment %}
 endsnippet
 
@@ -40,13 +40,28 @@ snippet if
 {% endif %}
 endsnippet
 
-snippet else
+snippet ife
+{% if ${1} %}
+	${2}
+{% else %}
+	${3}
+{% endif %}
+endsnippet
+
+snippet el
 {% else %}
 	${1}
 endsnippet
 
 snippet inc
 {% include '${1}' %}
+endsnippet
+
+# Jekyll-specific snippets
+snippet hl
+{% highlight ${1} %}
+	${VISUAL}${2}
+{% endhighlight %}
 endsnippet
 
 # vim:ft=snippets:
