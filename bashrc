@@ -10,3 +10,10 @@ nlow()
   osascript -e 'tell application "iTunes" to next track'
 }
 alias nLow=nlow
+
+tojpeg()
+{
+convert $1 -background white -mosaic +matte ${1%.*}.jpg
+}
+
+alias toJPEG=tojpeg
