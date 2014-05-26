@@ -14,8 +14,9 @@ bundleexec()
 }
 alias b=bundleexec
 
-source ~/.tmuxinator/tmuxinator.bash
 PATH=/usr/local/bin:$PATH # Check Brew before system bins
+
+source ~/.tmuxinator/tmuxinator.bash
 PATH=$PATH:$HOME/Library/Python/2.7/bin # Add Powerline to PATH
 
 #source /Users/hex/Library/Python/2.7/lib/python/site-packages/powerline/bindings/bash/powerline.sh
