@@ -13,7 +13,7 @@ alias nLow=nlow
 
 tojpeg()
 {
-convert $1 -background white -mosaic +matte ${1%.*}.jpg
+convert $1 -background white -interlace Plane -quality 80 -mosaic +matte ${1%.*}.jpg
 }
 
 alias toJPEG=tojpeg
