@@ -50,8 +50,6 @@ set laststatus=2                  " Show the status line all the time
 " Useful status information at bottom of screen
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
 
-set clipboard=unnamed
-
 let g:netrw_liststyle=3 " Use tree-mode as default view
 "let g:netrw_browse_split=4 " Open file in previous buffer
 "let g:netrw_preview=1 " preview window shown in a vertically split
