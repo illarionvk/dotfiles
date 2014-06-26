@@ -5,15 +5,6 @@ export EDITOR=vim
 # Prompt Format
 PS1='\[\e[0;33m\]\h(\A):\w \u\$\[\e[m\] '
 
-alias vim="/usr/local/bin/vim"
-alias ll="ls -lGp"
-
-bundleexec()
-{
-  bundle exec $1 $2 $3 $4
-}
-alias b=bundleexec
-
 PATH=/usr/local/bin:$PATH # Check Brew before system bins
 
 source ~/.tmuxinator/tmuxinator.bash

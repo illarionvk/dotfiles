@@ -1,3 +1,13 @@
+alias vim="/usr/local/bin/vim"
+
+alias ll="ls -lhGp"
+
+bundleexec()
+{
+  bundle exec $1 $2 $3 $4
+}
+alias b=bundleexec
+
 alias tyellow="tmux attach -t yellow"
 alias tgreen="tmux attach -t green"
 alias tgrey="tmux attach -t grey"
