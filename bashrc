@@ -27,3 +27,6 @@ convert $1 -background white -interlace Plane -quality 80 -mosaic +matte ${1%.*}
 }
 
 alias toJPEG=tojpeg
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
