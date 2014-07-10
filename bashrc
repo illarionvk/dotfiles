@@ -4,7 +4,7 @@ alias ll="ls -lhGp"
 
 bundleexec()
 {
-  bundle exec $1 $2 $3 $4
+  bundle exec $@
 }
 alias b=bundleexec
 
@@ -27,6 +27,8 @@ convert $1 -background white -interlace Plane -quality 80 -mosaic +matte ${1%.*}
 }
 
 alias toJPEG=tojpeg
+
+alias npm-exec='PATH=$(npm bin):$PATH'
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
