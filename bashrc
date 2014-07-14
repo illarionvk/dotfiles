@@ -8,10 +8,6 @@ bundleexec()
 }
 alias b=bundleexec
 
-alias tyellow="tmux attach -t yellow"
-alias tgreen="tmux attach -t green"
-alias tgrey="tmux attach -t grey"
-
 alias nTune="osascript -e 'tell application \"iTunes\" to next track'"
 alias nSpot="osascript -e 'tell application \"Spotify\" to next track'"
 nlow()
@@ -29,6 +25,8 @@ convert $1 -background white -interlace Plane -quality 80 -mosaic +matte ${1%.*}
 alias toJPEG=tojpeg
 
 alias npm-exec='PATH=$(npm bin):$PATH'
+
+alias cleantree="tree -I 'node_modules|bower_components|Gemfile*' -F"
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
