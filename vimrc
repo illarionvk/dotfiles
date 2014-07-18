@@ -121,3 +121,8 @@ let g:UltiSnipsEditSplit="horizontal"
 python from powerline.vim import setup as powerline_setup
 python powerline_setup()
 python del powerline_setup
+
+let g:indent_guides_enable_on_vim_startup=1
+let g:indent_guides_auto_colors = 0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=8
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=0
