@@ -28,5 +28,19 @@ alias npm-exec='PATH=$(npm bin):$PATH'
 
 alias cleantree="tree -I 'node_modules|bower_components|Gemfile*' -F"
 
+switchAllPanesToFolderInTmux()
+{
+  cd $1
+  pwd=$(pwd)
+  paneIndexString=$(tmux list-panes -F "#{pane_index}" | tr "\n" " ")
+  paneIndexArray=($paneIndexString)
+  for i in ${paneIndexArray[@]}
+  do
+    tmux send-keys -t "$i" "cd $pwd" Enter
+  done
+  tmux select-pane -t "${paneIndexArray[0]}"
+}
+alias cdpanes=switchAllPanesToFolderInTmux
+
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
