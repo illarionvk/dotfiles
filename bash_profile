@@ -3,7 +3,7 @@ export LSCOLORS=GxFxCxDxBxegedabagaced
 export EDITOR=vim
 
 # Prompt Format
-PS1='\[\e[0;33m\]\h(\A):\w \u\$\[\e[m\] '
+PS1='\[\e[0;33m\]\A \W \u\$\[\e[m\] '
 
 PATH=/usr/local/bin:$PATH # Check Brew before system bins
 
