@@ -1,5 +1,3 @@
-alias vim="/usr/local/bin/vim"
-
 alias ll="ls -lhGp"
 
 bundleexec()
