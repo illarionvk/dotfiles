@@ -88,6 +88,7 @@ nnoremap <C-l> <C-w>l
 autocmd FileType css setlocal foldmethod=indent nofoldenable shiftwidth=2 tabstop=2
 
 " Settings for Markdown files
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 autocmd FileType markdown setlocal spell spelllang=en_us,ru_yo,pl
 autocmd FileType markdown setlocal textwidth=80
 
