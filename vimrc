@@ -63,6 +63,9 @@ set t_Co=256
 set background=dark
 colorscheme solarized
 
+" Improve matching parentheses highlighting
+highlight MatchParen ctermbg=blue
+
 " Highlight special characters
 set listchars=nbsp:¬,eol:¶,tab:>-,extends:»,precedes:«,trail:•
 
