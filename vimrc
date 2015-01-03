@@ -64,7 +64,7 @@ set background=dark
 colorscheme solarized
 
 " Improve matching parentheses highlighting
-highlight MatchParen ctermbg=blue
+highlight MatchParen ctermbg=magenta
 
 " Highlight special characters
 set listchars=nbsp:¬,eol:¶,tab:>-,extends:»,precedes:«,trail:•
