@@ -1,4 +1,9 @@
-alias ll="ls -lhGp"
+alias ll="ls -lGhp"
+alias la="ls -lAGhp"
+alias ln='ln -v'
+
+# Pretty print the path
+alias path="echo $PATH | tr -s ':' '\n'"
 
 bundleexec()
 {
