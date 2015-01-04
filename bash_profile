@@ -14,7 +14,7 @@ PATH=$PATH:$HOME/Library/Python/2.7/bin # Add Powerline to PATH
 
 eval "$(rbenv init -)"
 
-# Convenience aliases are stored in bashrc
+# Include bashrc
 if [ -f ~/.bashrc ]; then
    source ~/.bashrc
 fi
