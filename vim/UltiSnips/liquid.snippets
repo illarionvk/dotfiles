@@ -53,8 +53,20 @@ snippet el
 	${1}
 endsnippet
 
+# Shopify snippets
+
 snippet inc
 {% include '${1}' %}
+endsnippet
+
+snippet asset
+{{ '${1}' | asset_url }}
+endsnippet
+
+snippet blank
+{% if ${1} and $1 != blank %}
+	${2}
+{% endif %}
 endsnippet
 
 # Jekyll-specific snippets
