@@ -3,6 +3,22 @@ snippet #{
 endsnippet
 
 snippet chead
-/* ${1}
-	 ================================================================== */
+/* ${1} */
+/* ================================================================== */
+endsnippet
+
+snippet media
+@media #{\$${1}} {
+	${2}
+}
+endsnippet
+
+# Shopify-specific
+
+snippet asset
+url('#{'{{ "${1}" | asset_url }}'}')
+endsnippet
+
+snippet setting
+#{'{{ settings.${1} }}'}
 endsnippet
