@@ -31,7 +31,7 @@ convert $1 -strip -background white -interlace Plane -quality "95%" -mosaic -alp
 
 alias toJPEG=tojpeg
 
-alias cleantree="tree -I 'node_modules|bower_components|Gemfile*' -F"
+alias cleantree="tree -I 'node_modules|bower_components|Gemfile*' -F --dirsfirst"
 
 switchAllPanesToFolderInTmux()
 {
