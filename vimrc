@@ -63,6 +63,9 @@ set t_Co=256
 set background=dark
 colorscheme solarized
 
+" Don't syntax color lines that are too long, to prevent slowdowns
+set synmaxcol=300
+
 " Improve matching parentheses highlighting
 highlight MatchParen ctermbg=magenta
 
