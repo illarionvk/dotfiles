@@ -13,10 +13,14 @@ snippet media
 }
 endsnippet
 
+snippet base64
+url(data:image/svg+xml;base64,$1);
+endsnippet
+
 # Shopify-specific
 
 snippet asset
-url('#{'{{ "${1}" | asset_url }}'}')
+url('#{'{{ "${1}" | asset_url }}'}');
 endsnippet
 
 snippet setting
