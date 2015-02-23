@@ -1,6 +1,6 @@
-# ~/.tmuxinator/yellow.yml
+# ~/.tmuxinator/primary.yml
 
-name: yellow
+name: primary
 root: ~/dev/
 
 # Optional tmux socket
