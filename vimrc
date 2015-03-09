@@ -139,7 +139,6 @@ let g:airline_right_sep=' '
 " Speed up things a bit
 set nocursorline
 set nocursorcolumn
-set nocursorline
 set norelativenumber
 set scrolljump=5
 set ttyfast
