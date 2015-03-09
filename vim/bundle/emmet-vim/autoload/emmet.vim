@@ -1,7 +1,7 @@
 "=============================================================================
 " emmet.vim
 " Author: Yasuhiro Matsumoto <mattn.jp@gmail.com>
-" Last Change: 17-Dec-2014.
+" Last Change: 21-Feb-2015.
 
 let s:save_cpo = &cpoptions
 set cpoptions&vim
@@ -622,9 +622,9 @@ function! emmet#expandAbbr(mode, abbr) range abort
     let expand = emmet#unescapeDollarExpr(expand)
     if a:mode ==# 2 && visualmode() ==# 'v'
       if a:firstline ==# a:lastline
-        let expand = substitute(expand, '\n\s*', '', 'g')
+        let expand = substitute(expand, '[\r\n]\s*', '', 'g')
       else
-        let expand = substitute(expand, '\n$', '', 'g')
+        let expand = substitute(expand, '[\n]$', '', 'g')
       endif
       silent! normal! gv
       let col = col('''<')
@@ -644,14 +644,14 @@ function! emmet#expandAbbr(mode, abbr) range abort
       else
         let indent = ''
       endif
-      let expand = substitute(expand, '\n\s*$', '', 'g')
+      let expand = substitute(expand, '[\r\n]\s*$', '', 'g')
       if emmet#useFilter(filters, 's')
-        let epart = substitute(expand, "\n\s\*", '', 'g')
+        let epart = substitute(expand, '[\r\n]\s\*', '', 'g')
       else
-        let epart = substitute(expand, "\n", "\n" . indent, 'g')
+        let epart = substitute(expand, '[\r\n]', "\n" . indent, 'g')
       endif
       let expand = line[:-len(part)-1] . epart . rest
-      let lines = split(expand, "\n", 1)
+      let lines = split(expand, '[\r\n]', 1)
       if a:mode ==# 2
         silent! exe 'normal! gvc'
       endif
@@ -929,7 +929,6 @@ let s:emmet_settings = {
 \      'lang': "en",
 \      'locale': "en-US",
 \      'charset': "UTF-8",
-\      'indentation': "\t",
 \      'newline': "\n",
 \      'use_selection': 0,
 \    },
@@ -1637,7 +1636,8 @@ let s:emmet_settings = {
 \            'ins': {'datetime': '${datetime}'},
 \            'link:css': [{'rel': 'stylesheet'}, g:emmet_html5 ? {} : {'type': 'text/css'}, {'href': '|style.css'}, {'media': 'all'}],
 \            'link:print': [{'rel': 'stylesheet'}, g:emmet_html5 ? {} : {'type': 'text/css'}, {'href': '|print.css'}, {'media': 'print'}],
-\            'link:import': [{'rel': 'import'}, {'href': ''}],
+\            'link:import': [{'rel': 'import'}, {'href': '|.html'}],
+\            'link:im': [{'rel': 'import'}, {'href': '|.html'}],
 \            'link:favicon': [{'rel': 'shortcut icon'}, {'type': 'image/x-icon'}, {'href': '|favicon.ico'}],
 \            'link:touch': [{'rel': 'apple-touch-icon'}, {'href': '|favicon.png'}],
 \            'link:rss': [{'rel': 'alternate'}, {'type': 'application/rss+xml'}, {'title': 'RSS'}, {'href': '|rss.xml'}],
@@ -1814,6 +1814,10 @@ let s:emmet_settings = {
 \        'expandos': {
 \            'choose': 'xsl:choose>xsl:when+xsl:otherwise',
 \        }
+\    },
+\    'jsx': {
+\        'extends': 'html',
+\        'attribute_name': {'class': 'className'},
 \    },
 \    'xslt': {
 \        'extends': 'xsl',
