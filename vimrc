@@ -135,3 +135,12 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=0
 " vim-airline options
 let g:airline_left_sep=' '
 let g:airline_right_sep=' '
+
+" Speed up things a bit
+set nocursorline
+set nocursorcolumn
+set nocursorline
+set norelativenumber
+set scrolljump=5
+set ttyfast
+syntax sync minlines=256
