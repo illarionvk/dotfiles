@@ -61,7 +61,8 @@ let g:html_indent_tags = 'li\|p'
 set term=xterm-256color
 set t_Co=256
 set background=dark
-colorscheme solarized
+let g:gruvbox_termcolors=16
+colorscheme gruvbox
 
 " Don't syntax color lines that are too long, to prevent slowdowns
 set synmaxcol=300
@@ -128,7 +129,7 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 let g:UltiSnipsEditSplit="horizontal"
 
 let g:indent_guides_enable_on_vim_startup=1
-let g:indent_guides_auto_colors = 0
+let g:indent_guides_auto_colors = 1
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=8
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=0
 
