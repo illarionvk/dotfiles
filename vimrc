@@ -128,11 +128,6 @@ let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 let g:UltiSnipsEditSplit="horizontal"
 
-let g:indent_guides_enable_on_vim_startup=1
-let g:indent_guides_auto_colors = 1
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=8
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=0
-
 " vim-airline options
 let g:airline_left_sep=' '
 let g:airline_right_sep=' '
