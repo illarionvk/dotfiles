@@ -67,9 +67,6 @@ colorscheme gruvbox
 " Don't syntax color lines that are too long, to prevent slowdowns
 set synmaxcol=300
 
-" Improve matching parentheses highlighting
-highlight MatchParen ctermbg=magenta
-
 " Highlight special characters
 set listchars=nbsp:¬,eol:¶,tab:>-,extends:»,precedes:«,trail:•
 
@@ -131,6 +128,12 @@ let g:UltiSnipsEditSplit="horizontal"
 " vim-airline options
 let g:airline_left_sep=' '
 let g:airline_right_sep=' '
+
+" vim-indent-guides options
+let g:indent_guides_enable_on_vim_startup=1
+let g:indent_guides_auto_colors=0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=8
 
 " Speed up things a bit
 set nocursorline
