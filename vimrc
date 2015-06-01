@@ -95,7 +95,7 @@ set keymap=russian-jcukenwin
 set iminsert=0
 set imsearch=0
 " Switch back to English on ESC
-inoremap <ESC> <ESC>:set iminsert=0<CR>
+inoremap <silent> <ESC> <ESC>:set iminsert=0<CR>
 
 " Automatic fold settings for specific files. Uncomment to use.
 " autocmd FileType ruby setlocal foldmethod=syntax
