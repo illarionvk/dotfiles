@@ -68,7 +68,8 @@ colorscheme gruvbox
 set synmaxcol=300
 
 " Highlight special characters
-set listchars=nbsp:¬,eol:¶,tab:>-,extends:»,precedes:«,trail:•
+set list
+set listchars=nbsp:¬,tab:>-,extends:»,precedes:«,trail:•
 
 " Tab mappings.
 map <leader>tt :tabnew<cr>
