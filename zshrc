@@ -93,7 +93,6 @@ bundleexec()
 }
 alias be=bundleexec
 
-alias npm-exec='PATH=$(npm bin):$PATH'
 alias ne='PATH=$(npm bin):$PATH'
 
 alias path="echo $PATH | tr -s ':' '\n'"
@@ -125,4 +124,16 @@ alias toJPEG=tojpeg
 
 # Tree
 alias cleantree="tree -I 'node_modules|bower_components|Gemfile*' -F --dirsfirst"
+
+# This loads nvm
+export NVM_DIR="/Users/hex/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+
+# Check node version on working dir change
+function nvm_chpwd() {
+  if [ -r $PWD/.nvmrc ]; then
+    nvm use `cat $PWD/.nvmrc`
+  fi
+}
+chpwd_functions=(${chpwd_functions[@]} "nvm_chpwd")
 
