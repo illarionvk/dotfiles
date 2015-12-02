@@ -93,6 +93,12 @@ bundleexec()
 }
 alias be=bundleexec
 
+npmrun()
+{
+  npm run $@
+}
+alias nr=npmrun
+
 alias ne='PATH=$(npm bin):$PATH'
 
 alias path="echo $PATH | tr -s ':' '\n'"
