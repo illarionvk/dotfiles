@@ -7,9 +7,10 @@ export ZSH=/Users/hex/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="bullet-train"
 BULLETTRAIN_GIT_EXTENDED=false
-BULLETTRAIN_VIRTUALENV_SHOW=false
 BULLETTRAIN_NVM_SHOW=false
+BULLETTRAIN_PROMPT_ADD_NEWLINE=false
 BULLETTRAIN_RUBY_SHOW=false
+BULLETTRAIN_VIRTUALENV_SHOW=false
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
