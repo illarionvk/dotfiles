@@ -18,14 +18,8 @@ snippet base64
 url(data:image/svg+xml;base64,$1);
 endsnippet
 
-# Shopify-specific
-
-snippet asset
-url('#{'{{ "${1}" | asset_url }}'}');
-endsnippet
-
-snippet set
-#{'{{ settings.${1} }}'}
+snippet center
+transform: translateX(-50%) translateY(-50%) translateZ(0);
 endsnippet
 
 snippet bg
@@ -59,4 +53,14 @@ padding-bottom: 100%;
 background-size: contain;
 background-position: center;
 background-repeat: no-repeat;
+endsnippet
+
+# Shopify-specific
+
+snippet asset
+url('#{'{{ "${1}" | asset_url }}'}')
+endsnippet
+
+snippet set
+#{'{{ settings.${1} }}'}
 endsnippet
