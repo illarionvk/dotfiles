@@ -58,10 +58,7 @@ let g:netrw_liststyle=3 " Use tree-mode as default view
 let g:html_indent_tags = 'li\|p'
 
 " COLORS
-set term=xterm-256color
-set t_Co=256
 set background=dark
-let g:gruvbox_termcolors=16
 colorscheme gruvbox
 
 " Don't syntax color lines that are too long, to prevent slowdowns
