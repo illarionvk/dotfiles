@@ -8,12 +8,6 @@ snippet chead
 ------------------------------------------------*/
 endsnippet
 
-snippet media
-@media #{\$${1}} {
-	${2}
-}
-endsnippet
-
 snippet base64
 url(data:image/svg+xml;base64,$1);
 endsnippet
@@ -53,6 +47,14 @@ padding-bottom: 100%;
 background-size: contain;
 background-position: center;
 background-repeat: no-repeat;
+endsnippet
+
+# Foundation-specific
+
+snippet media
+@include breakpoint(${1}) {
+	${VISUAL}${2}
+}
 endsnippet
 
 # Shopify-specific
