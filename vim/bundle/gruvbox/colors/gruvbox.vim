@@ -747,12 +747,8 @@ hi! link SyntasticWarningSign GruvboxYellowSign
 
 " }}}
 " Signature: {{{
-
+hi! link SignatureMarkText   GruvboxBlueSign
 hi! link SignatureMarkerText GruvboxPurpleSign
-hi! link SignatureMarkText GruvboxBlueSign
-
-let g:SignatureMarkerTextHL='"SignatureMarkerText"'
-let g:SignatureMarkTextHL='"SignatureMarkText"'
 
 " }}}
 " ShowMarks: {{{
@@ -797,6 +793,14 @@ let g:vimshell_escape_colors = [
   \ s:bg0[0], s:red[0], s:green[0], s:orange[0],
   \ s:blue[0], s:purple[0], s:aqua[0], s:fg0[0]
   \ ]
+
+" }}}
+" BufTabLine: {{{
+
+call s:HL('BufTabLineCurrent', s:bg0, s:fg4)
+call s:HL('BufTabLineActive', s:fg4, s:bg2)
+call s:HL('BufTabLineHidden', s:bg4, s:bg1)
+call s:HL('BufTabLineFill', s:bg0, s:bg0)
 
 " }}}
 
