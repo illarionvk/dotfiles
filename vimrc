@@ -68,6 +68,9 @@ set synmaxcol=300
 set list
 set listchars=nbsp:¬,tab:>-,extends:»,precedes:«,trail:•
 
+" Map <Esc> to fd
+imap fd <Esc>
+
 " Tab mappings.
 map <leader>tt :tabnew<cr>
 map <leader>te :tabedit
