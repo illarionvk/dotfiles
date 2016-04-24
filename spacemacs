@@ -207,12 +207,23 @@ values."
   "Initialization function for user code.
 It is called immediately after `dotspacemacs/init'.  You are free to put any
 user code."
-  )
+  (if (executable-find "trash")
+    (defun system-move-file-to-trash (file)
+      "Use `trash' to move FILE to the system trash.
+      Can be installed with `brew install trash', or `brew install osxutils`''."
+      (call-process (executable-find "trash") nil 0 nil file))
+    ;; regular move to trash directory
+    (setq trash-directory "~/.Trash/emacs"))
+)
 
 (defun dotspacemacs/user-config ()
   "Configuration function for user code.
  This function is called at the very end of Spacemacs initialization after
 layers configuration. You are free to put any user code."
+  (setq-default
+   ;; Enable line numbers
+   dotspacemacs-line-numbers t
+   )
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
