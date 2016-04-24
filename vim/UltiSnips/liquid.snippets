@@ -65,10 +65,6 @@ endsnippet
 
 # Shopify snippets
 
-snippet inc
-{% include '${1}' %}
-endsnippet
-
 snippet asset
 {{ '${1}' | asset_url }}
 endsnippet
@@ -77,6 +73,16 @@ snippet blank
 {% if ${1} and $1 != blank %}
 	${2}
 {% endif %}
+endsnippet
+
+snippet capture
+{% capture ${1} %}
+${VISUAL}
+{% endcapture %}
+endsnippet
+
+snippet inc
+{% include '${1}' %}
 endsnippet
 
 # Jekyll-specific snippets
