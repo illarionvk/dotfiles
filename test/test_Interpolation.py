@@ -283,7 +283,7 @@ i0
 
 class PythonCode_IndentEtSw(_VimTest):
 
-    def _extra_options_pre_init(self, vim_config):
+    def _extra_vim_config(self, vim_config):
         vim_config.append('set sw=3')
         vim_config.append('set expandtab')
     snippets = ('test', r"""hi
@@ -307,7 +307,7 @@ i0
 
 class PythonCode_IndentEtSwOffset(_VimTest):
 
-    def _extra_options_pre_init(self, vim_config):
+    def _extra_vim_config(self, vim_config):
         vim_config.append('set sw=3')
         vim_config.append('set expandtab')
     snippets = ('test', r"""hi
@@ -331,7 +331,7 @@ End""")
 
 class PythonCode_IndentNoetSwTs(_VimTest):
 
-    def _extra_options_pre_init(self, vim_config):
+    def _extra_vim_config(self, vim_config):
         vim_config.append('set sw=3')
         vim_config.append('set ts=4')
     snippets = ('test', r"""hi
@@ -357,7 +357,7 @@ i0
 
 class PythonCode_OptExists(_VimTest):
 
-    def _extra_options_pre_init(self, vim_config):
+    def _extra_vim_config(self, vim_config):
         vim_config.append('let g:UStest="yes"')
     snippets = (
         'test',
@@ -429,6 +429,17 @@ class PythonCode_AccessKilledTabstop_OverwriteFirst(_VimTest):
     keys = 'test' + EX + 'aaa'
     wanted = 'aaa'
 
+class PythonCode_CanOverwriteTabstop(_VimTest):
+    snippets = (
+        'test',
+        """$1`!p if len(t[1]) > 3 and len(t[2]) == 0:
+            t[2] = t[1][2:];
+            t[1] = t[1][:2] + '-\\n\\t';
+            vim.command('call feedkeys("\<End>", "n")');
+            `$2""")
+    keys = 'test' + EX + 'blah' + ', bah'
+    wanted = "bl-\n\tah, bah"
+
 
 class PythonVisual_NoVisualSelection_Ignore(_VimTest):
     snippets = ('test', 'h`!p snip.rv = snip.v.mode + snip.v.text`b')
@@ -446,6 +457,26 @@ class PythonVisual_LineSelect_Simple(_VimTest):
     snippets = ('test', 'h`!p snip.rv = snip.v.mode + snip.v.text`b')
     keys = 'hello\nnice\nworld' + ESC + 'Vkk' + EX + 'test' + EX
     wanted = 'hVhello\nnice\nworld\nb'
+
+class PythonVisual_HasAccessToSelectedPlaceholders(_VimTest):
+    snippets = (
+        'test',
+        """${1:first} ${2:second} (`!p
+snip.rv = "placeholder: " + snip.p.current_text`)"""
+    )
+    keys = 'test' + EX + ESC + "otest" + EX + JF + ESC
+    wanted = """first second (placeholder: first)
+first second (placeholder: second)"""
+
+class PythonVisual_HasAccessToZeroPlaceholders(_VimTest):
+    snippets = (
+        'test',
+        """${1:first} ${2:second} (`!p
+snip.rv = "placeholder: " + snip.p.current_text`)"""
+    )
+    keys = 'test' + EX + ESC + "otest" + EX + JF + JF + JF + JF
+    wanted = """first second (placeholder: first second (placeholder: ))
+first second (placeholder: )"""
 
 # Tests for https://bugs.launchpad.net/bugs/1259349
 

@@ -179,6 +179,12 @@ class Transformation_OptionIgnoreCase_ECR(_VimTest):
     wanted = 'TEST blah'
 
 
+class Transformation_OptionMultiline_ECR(_VimTest):
+    snippets = ('test', r"${VISUAL/^/* /mg}")
+    keys = 'test\ntest\ntest' + ESC + 'V2k' + EX + 'test' + EX
+    wanted = '* test\n* test\n* test'
+
+
 class Transformation_OptionReplaceGlobal_ECR(_VimTest):
     snippets = ('test', r"$1 ${1/, */-/g}")
     keys = 'test' + EX + 'a, nice, building'
@@ -245,4 +251,19 @@ class Transformation_TestKill_InsertEnd_Kill(_VimTest):
     keys = 'hallo test' + EX + 'AUCH' + ESC + \
         'ehihi' + ESC + 'bb' + 'ino' + JF + 'end'
     wanted = 'hallo noAUCH auchauchih_end'
+
+class Transformation_ConditionalWithEscapedDelimiter(_VimTest):
+    snippets = 'test', r"$1 ${1/(aa)|.*/(?1:yes\:no\))/}"
+    keys = 'test' + EX + 'aa'
+    wanted = 'aa yes:no)'
+
+class Transformation_ConditionalWithBackslashBeforeDelimiter(_VimTest):
+    snippets = 'test', r"$1 ${1/(aa)|.*/(?1:yes\\:no)/}"
+    keys = 'test' + EX + 'aa'
+    wanted = 'aa yes\\'
+
+class Transformation_ConditionalWithBackslashBeforeDelimiter1(_VimTest):
+    snippets = 'test', r"$1 ${1/(aa)|.*/(?1:yes:no\\)/}"
+    keys = 'test' + EX + 'ab'
+    wanted = 'ab no\\'
 # End: Transformations  #}}}
