@@ -5,7 +5,7 @@ if exists("b:current_syntax")
   finish
 endif
 
-if expand("%:p:h:t") == "snippets" && search("^endsnippet", "nw") == 0
+if expand("%:p:h") =~ "snippets" && search("^endsnippet", "nw") == 0
             \ && !exists("b:ultisnips_override_snipmate")
     " this appears to be a snipmate file
     " It's in a directory called snippets/ and there's no endsnippet keyword
@@ -47,10 +47,10 @@ syn match snipExtendsKeyword "^extends" contained display
 
 " snippet {{{3
 
-syn region snipSnippet start="^snippet\_s" end="^\zeendsnippet\s*$" contains=snipSnippetHeader nextgroup=snipSnippetFooter fold keepend
+syn region snipSnippet start="^snippet\_s" end="^endsnippet\s*$" contains=snipSnippetHeader fold keepend
 syn match snipSnippetHeader "^.*$" nextgroup=snipSnippetBody,snipSnippetFooter skipnl contained contains=snipSnippetHeaderKeyword
 syn match snipSnippetHeaderKeyword "^snippet" contained nextgroup=snipSnippetTrigger skipwhite
-syn region snipSnippetBody start="\_." end="^\zeendsnippet\s*$" contained contains=snipLeadingSpaces,@snipTokens
+syn region snipSnippetBody start="\_." end="^\zeendsnippet\s*$" contained nextgroup=snipSnippetFooter contains=snipLeadingSpaces,@snipTokens
 syn match snipSnippetFooter "^endsnippet.*" contained contains=snipSnippetFooterKeyword
 syn match snipSnippetFooterKeyword "^endsnippet" contained
 
@@ -73,12 +73,16 @@ syn match snipSnippetTrigger "\S\+" contained nextgroup=snipSnippetDocString,sni
 " So we have to define this twice, once in the general case that matches a
 " trailing " as the doc comment, and once for the case of the multiword
 " delimiter using " that has more constraints
-syn match snipSnippetTrigger ,\([^"[:space:]]\).\{-}\1\%(\s*$\)\@!\ze\%(\s\+"[^"]*\%("\s\+[^"[:space:]]\+\|"\)\=\)\=\s*$, contained nextgroup=snipSnippetDocString skipwhite
 syn match snipSnippetTrigger ,".\{-}"\ze\%(\s\+"\%(\s*\S\)\@=[^"]*\%("\s\+[^"[:space:]]\+\|"\)\=\)\=\s*$, contained nextgroup=snipSnippetDocString skipwhite
+syn match snipSnippetTrigger ,\%(\(\S\).\{-}\1\|\S\+\)\ze\%(\s\+"[^"]*\%("\s\+\%("[^"]\+"\s\+[^"[:space:]]*e[^"[:space:]]*\)\|"\)\=\)\=\s*$, contained nextgroup=snipSnippetDocContextString skipwhite
+syn match snipSnippetTrigger ,\([^"[:space:]]\).\{-}\1\%(\s*$\)\@!\ze\%(\s\+"[^"]*\%("\s\+\%("[^"]\+"\s\+[^"[:space:]]*e[^"[:space:]]*\|[^"[:space:]]\+\)\|"\)\=\)\=\s*$, contained nextgroup=snipSnippetDocString skipwhite
 syn match snipSnippetTriggerInvalid ,\S\@=.\{-}\S\ze\%(\s\+"[^"]*\%("\s\+[^"[:space:]]\+\s*\|"\s*\)\=\|\s*\)$, contained nextgroup=snipSnippetDocString skipwhite
-syn match snipSnippetDocString ,"[^"]*\%("\ze\s*\%(\s[^"[:space:]]\+\s*\)\=\)\=$, contained nextgroup=snipSnippetOptions skipwhite
+syn match snipSnippetDocString ,"[^"]*", contained nextgroup=snipSnippetOptions skipwhite
+syn match snipSnippetDocContextString ,"[^"]*", contained nextgroup=snipSnippetContext skipwhite
+syn match snipSnippetContext ,"[^"]\+", contained skipwhite contains=snipSnippetContextP
+syn region snipSnippetContextP start=,"\@<=., end=,\ze", contained contains=@Python nextgroup=snipSnippetOptions skipwhite keepend
 syn match snipSnippetOptions ,\S\+, contained contains=snipSnippetOptionFlag
-syn match snipSnippetOptionFlag ,[biwrts], contained
+syn match snipSnippetOptionFlag ,[biwrtsmxAe], contained
 
 " Command substitution {{{4
 
@@ -112,7 +116,7 @@ syn region snipBalancedBraces start="{" end="}" contained transparent extend
 syn cluster snipTokens add=snipTabStop
 syn cluster snipTabStopTokens add=snipTabStop
 
-syn region snipVisual matchgroup=snipVisual start="\${VISUAL[:}/]\@=" end="}" contained contains=snipVisualDefault,snipTransformationPattern
+syn region snipVisual matchgroup=snipVisual start="\${VISUAL[:}/]\@=" end="}" contained contains=snipVisualDefault,snipTransformationPattern extend
 syn region snipVisualDefault matchgroup=snipVisual start=":" end="\ze[}/]" contained contains=snipTabStopEscape nextgroup=snipTransformationPattern
 syn cluster snipTokens add=snipVisual
 syn cluster snipTabStopTokens add=snipVisual
@@ -151,6 +155,20 @@ syn match snipPriority "^priority\%(\s.*\|$\)" contains=snipPriorityKeyword disp
 syn match snipPriorityKeyword "^priority" contained nextgroup=snipPriorityValue skipwhite display
 syn match snipPriorityValue "-\?\d\+" contained display
 
+" context {{{3
+
+syn match snipContext "^context.*$" contains=snipContextKeyword display skipwhite
+syn match snipContextKeyword "context" contained nextgroup=snipContextValue skipwhite display
+syn match snipContextValue '"[^"]*"' contained contains=snipContextValueP
+syn region snipContextValueP start=,"\@<=., end=,\ze", contained contains=@Python skipwhite keepend
+
+" Actions {{{3
+
+syn match snipAction "^\%(pre_expand\|post_expand\|post_jump\).*$" contains=snipActionKeyword display skipwhite
+syn match snipActionKeyword "\%(pre_expand\|post_expand\|post_jump\)" contained nextgroup=snipActionValue skipwhite display
+syn match snipActionValue '"[^"]*"' contained contains=snipActionValueP
+syn region snipActionValueP start=,"\@<=., end=,\ze", contained contains=@Python skipwhite keepend
+
 " Snippt Clearing {{{2
 
 syn match snipClear "^clearsnippets\%(\s.*\|$\)" contains=snipClearKeyword display
@@ -172,6 +190,7 @@ hi def link snipSnippetFooterKeyword snipKeyword
 hi def link snipSnippetTrigger        Identifier
 hi def link snipSnippetTriggerInvalid Error
 hi def link snipSnippetDocString      String
+hi def link snipSnippetDocContextString String
 hi def link snipSnippetOptionFlag     Special
 
 hi def link snipGlobalHeaderKeyword  snipKeyword
@@ -183,6 +202,9 @@ hi def link snipShellCommand     snipCommand
 hi def link snipVimLCommand      snipCommand
 hi def link snipPythonCommandP   PreProc
 hi def link snipVimLCommandV     PreProc
+hi def link snipSnippetContext   String
+hi def link snipContext          String
+hi def link snipAction           String
 
 hi def link snipEscape                     Special
 hi def link snipMirror                     StorageClass
@@ -198,8 +220,12 @@ hi def link snipTransformationReplace      String
 hi def link snipTransformationEscape       snipEscape
 hi def link snipTransformationOptions      Operator
 
+hi def link snipContextKeyword  Keyword
+
 hi def link snipPriorityKeyword  Keyword
 hi def link snipPriorityValue    Number
+
+hi def link snipActionKeyword  Keyword
 
 hi def link snipClearKeyword     Keyword
 

@@ -1,41 +1,12 @@
-" File: UltiSnips.vim
-" Author: Holger Rapp <SirVer@gmx.de>
-" Description: The Ultimate Snippets solution for Vim
-
-if exists('did_UltiSnips_autoload') || &cp || version < 700
+if exists("b:did_autoload_ultisnips") || !exists("g:_uspy")
     finish
 endif
-let did_UltiSnips_autoload=1
+let b:did_autoload_ultisnips = 1
 
-" Define dummy version of function called by autocommand setup in
-" ftdetect/UltiSnips.vim and plugin/UltiSnips.vim.
-" If the function isn't defined (probably due to using a copy of vim
-" without python support) it would cause an error.
-function! UltiSnips#FileTypeChanged()
-endfunction
-function! UltiSnips#CursorMoved()
-endfunction
-function! UltiSnips#CursorMoved()
-endfunction
-function! UltiSnips#LeavingBuffer()
-endfunction
-function! UltiSnips#LeavingInsertMode()
-endfunction
+" Also import vim as we expect it to be imported in many places.
+exec g:_uspy "import vim"
+exec g:_uspy "from UltiSnips import UltiSnips_Manager"
 
-call UltiSnips#bootstrap#Bootstrap()
-if !exists("g:_uspy")
-   " Delete the autocommands defined in plugin/UltiSnips.vim and
-   " ftdetect/UltiSnips.vim.
-   augroup UltiSnips
-       au!
-   augroup END
-   augroup UltiSnipsFileType
-       au!
-   augroup END
-   finish
-end
-
-" FUNCTIONS {{{
 function! s:compensate_for_pum()
     """ The CursorMovedI event is not triggered while the popup-menu is visible,
     """ and it's by this event that UltiSnips updates its vim-state. The fix is
@@ -75,7 +46,7 @@ function! UltiSnips#Edit(bang, ...)
 endfunction
 
 function! UltiSnips#AddFiletypes(filetypes)
-    exec g:_uspy "UltiSnips_Manager.add_buffer_filetypes('" . a:filetypes . ".all')"
+    exec g:_uspy "UltiSnips_Manager.add_buffer_filetypes('" . a:filetypes . "')"
     return ""
 endfunction
 
@@ -111,13 +82,17 @@ function! UltiSnips#ListSnippets()
     return ""
 endfunction
 
-function! UltiSnips#SnippetsInCurrentScope()
+function! UltiSnips#SnippetsInCurrentScope(...)
     let g:current_ulti_dict = {}
-    exec g:_uspy "UltiSnips_Manager.snippets_in_current_scope()"
+    let all = get(a:, 1, 0)
+    if all
+      let g:current_ulti_dict_info = {}
+    endif
+    exec g:_uspy "UltiSnips_Manager.snippets_in_current_scope(" . all . ")"
     return g:current_ulti_dict
 endfunction
 
-function! UltiSnips#SaveLastVisualSelection()
+function! UltiSnips#SaveLastVisualSelection() range
     exec g:_uspy "UltiSnips_Manager._save_last_visual_selection()"
     return ""
 endfunction
@@ -131,25 +106,6 @@ endfunction
 function! UltiSnips#JumpForwards()
     call s:compensate_for_pum()
     exec g:_uspy "UltiSnips_Manager.jump_forwards()"
-    return ""
-endfunction
-
-function! UltiSnips#FileTypeChanged()
-    exec g:_uspy "UltiSnips_Manager.reset_buffer_filetypes()"
-    exec g:_uspy "UltiSnips_Manager.add_buffer_filetypes('" . &ft . "')"
-    return ""
-endfunction
-
-
-function! UltiSnips#AddSnippet(trigger, value, description, options, ...)
-    " Takes the same arguments as SnippetManager.add_snippet.
-    echoerr "Deprecated UltiSnips#AddSnippet called. Please use UltiSnips#AddSnippetWithPriority." | sleep 1
-    exec g:_uspy "args = vim.eval(\"a:000\")"
-    exec g:_uspy "trigger = vim.eval(\"a:trigger\")"
-    exec g:_uspy "value = vim.eval(\"a:value\")"
-    exec g:_uspy "description = vim.eval(\"a:description\")"
-    exec g:_uspy "options = vim.eval(\"a:options\")"
-    exec g:_uspy "UltiSnips_Manager.add_snippet(trigger, value, description, options, *args)"
     return ""
 endfunction
 
@@ -184,5 +140,9 @@ endf
 
 function! UltiSnips#LeavingInsertMode()
     exec g:_uspy "UltiSnips_Manager._leaving_insert_mode()"
+endfunction
+
+function! UltiSnips#TrackChange()
+    exec g:_uspy "UltiSnips_Manager._track_change()"
 endfunction
 " }}}
