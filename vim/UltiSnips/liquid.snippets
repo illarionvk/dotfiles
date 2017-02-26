@@ -39,9 +39,9 @@ snippet for
 endsnippet
 
 snippet if
-{% if ${1} %}
+{%- if ${1} -%}
 	${2}
-{% endif %}
+{%- endif -%}
 endsnippet
 
 snippet ife
@@ -64,7 +64,7 @@ snippet unless
 endsnippet
 
 snippet assign
-{% assign ${1} = ${2} %}
+{%- assign ${1} = ${2} -%}
 endsnippet
 
 # Shopify snippets
@@ -80,13 +80,13 @@ snippet blank
 endsnippet
 
 snippet capture
-{% capture ${1} %}
+{%- capture ${1} -%}
 ${VISUAL}
-{% endcapture %}
+{%- endcapture -%}
 endsnippet
 
 snippet inc
-{% include '${1}' %}
+{%- include '${1}' -%}
 endsnippet
 
 # Jekyll-specific snippets
