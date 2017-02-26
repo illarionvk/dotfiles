@@ -307,6 +307,9 @@ explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   (add-to-list 'auto-mode-alist '("\\.liquid\\'" . web-mode))
   (spacemacs/load-theme 'gruvbox)
+  ;; Turn off js2 mode errors & warnings (for eslint/standard)
+  (setq js2-mode-show-parse-errors nil)
+  (setq js2-mode-show-strict-warnings nil)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
