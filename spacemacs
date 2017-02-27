@@ -310,6 +310,8 @@ you should place your code here."
   ;; Turn off js2 mode errors & warnings (for eslint/standard)
   (setq js2-mode-show-parse-errors nil)
   (setq js2-mode-show-strict-warnings nil)
+  (setq-default js2-basic-offset 2)
+  (setq-default js-indent-level 2)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
