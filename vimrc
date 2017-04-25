@@ -143,6 +143,9 @@ let g:indent_guides_auto_colors=0
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=0
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=8
 
+" Use pgsql dialect in SQL files
+let g:sql_type_default = 'pgsql'
+
 " Speed up things a bit
 set nocursorline
 set nocursorcolumn
