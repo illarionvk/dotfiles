@@ -33,9 +33,9 @@ ${VISUAL}${1}
 endsnippet
 
 snippet for
-{% for ${1} in ${2} %}
+{%- for ${1} in ${2} -%}
 	${3}
-{% endfor %}
+{%- endfor -%}
 endsnippet
 
 snippet if
@@ -45,22 +45,22 @@ snippet if
 endsnippet
 
 snippet ife
-{% if ${1} %}
+{%- if ${1} -%}
 	${2}
-{% else %}
+{%- else -%}
 	${3}
-{% endif %}
+{%- endif -%}
 endsnippet
 
 snippet el
-{% else %}
+{%- else -%}
 	${1}
 endsnippet
 
 snippet unless
-{% unless ${1} %}
+{%- unless ${1} -%}
 	${2}
-{% endunless %}
+{%- endunless -%}
 endsnippet
 
 snippet assign
@@ -90,7 +90,7 @@ snippet inc
 endsnippet
 
 snippet section
-{%- section '${1}' -%}
+{% section '${1}' %}
 endsnippet
 
 # Jekyll-specific snippets
