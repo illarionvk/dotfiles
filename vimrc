@@ -91,12 +91,12 @@ nnoremap <C-l> <C-w>l
 " Always use vertical diffs
 set diffopt+=vertical
 
-" Russian language support
-set keymap=russian-jcukenwin
-set iminsert=0
-set imsearch=0
-" Switch back to English on ESC
-inoremap <silent> <ESC> <ESC>:set iminsert=0<CR>
+" " Russian language support
+" set keymap=russian-jcukenwin
+" set iminsert=0
+" set imsearch=0
+" " Switch back to English on ESC
+" inoremap <silent> <ESC> <ESC>:set iminsert=0<CR>
 
 " Automatic fold settings for specific files. Uncomment to use.
 " autocmd FileType ruby setlocal foldmethod=syntax
