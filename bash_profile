@@ -14,8 +14,6 @@ PATH=$PATH:$HOME/Library/Python/2.7/bin # Add Powerline to PATH
 
 #source /Users/hex/Library/Python/2.7/lib/python/site-packages/powerline/bindings/bash/powerline.sh
 
-eval "$(rbenv init -)"
-
 # Include bashrc
 if [ -f ~/.bashrc ]; then
    source ~/.bashrc
