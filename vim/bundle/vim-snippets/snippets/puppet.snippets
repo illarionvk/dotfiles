@@ -214,6 +214,9 @@ snippet mount
 		device	=> "${0:device name or path}",
 	}
 
+snippet notify
+	notify { "${1:message}": }
+
 snippet package
 	package { "${1:package name}":
 		ensure	=> ${0:present},
@@ -221,7 +224,7 @@ snippet package
 
 snippet yumrepo
 	yumrepo { "${1:repo name}":
-		Descr   => "${2:$1}",
+		descr   => "${2:$1}",
 		enabled => ${0:1},
 	}
 
