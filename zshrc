@@ -153,3 +153,5 @@ FZF_DEFAULT_COMMAND='rg --files'
 FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 FZF_DEFAULT_OPTS='--reverse'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+alias rg="rg -i"
