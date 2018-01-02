@@ -148,3 +148,8 @@ function nvm_chpwd() {
 }
 chpwd_functions=(${chpwd_functions[@]} "nvm_chpwd")
 
+# Activate fzf fuzzy matching
+FZF_DEFAULT_COMMAND='rg --files'
+FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+FZF_DEFAULT_OPTS='--reverse'
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

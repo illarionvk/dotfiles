@@ -164,3 +164,7 @@ if exists('$ITERM_PROFILE')
     let &t_EI = "\<Esc>]50;CursorShape=0\x7"
   endif
 end
+
+" Add fzf fuzzy file lookup
+set rtp+=/usr/local/opt/fzf
+nnoremap <silent> <C-p> :FZF<CR>
