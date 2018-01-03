@@ -149,9 +149,14 @@ function nvm_chpwd() {
 chpwd_functions=(${chpwd_functions[@]} "nvm_chpwd")
 
 # Activate fzf fuzzy matching
-FZF_DEFAULT_COMMAND='rg --files'
-FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-FZF_DEFAULT_OPTS='--reverse'
+export FZF_DEFAULT_COMMAND='rg --files'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_DEFAULT_OPTS='--reverse'
+
+_fzf_compgen_path() {
+  rg --files "$1"
+}
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 alias rg="rg -i"
