@@ -134,7 +134,7 @@ convert $1 -strip -background white -interlace Plane -quality "95%" -mosaic -alp
 alias toJPEG=tojpeg
 
 # Tree
-alias cleantree="tree -I 'node_modules|bower_components|Gemfile*' -F --dirsfirst"
+alias ct="tree -I 'node_modules|bower_components|Gemfile*' -F --dirsfirst"
 
 # This loads nvm
 export NVM_DIR="/Users/hex/.nvm"
