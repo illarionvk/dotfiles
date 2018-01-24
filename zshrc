@@ -136,6 +136,9 @@ alias toJPEG=tojpeg
 # Tree
 alias tree="tree -I 'node_modules|bower_components|Gemfile*' -F --dirsfirst"
 
+# Run Midnight Commander without subshell to fix slow start times
+alias mc="mc --nosubshell"
+
 # This loads nvm
 export NVM_DIR="/Users/hex/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
