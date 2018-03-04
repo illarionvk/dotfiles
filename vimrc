@@ -133,10 +133,6 @@ let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 let g:UltiSnipsEditSplit="horizontal"
 
-" vim-airline options
-let g:airline_left_sep=' '
-let g:airline_right_sep=' '
-
 " vim-indent-guides options
 let g:indent_guides_enable_on_vim_startup=1
 let g:indent_guides_auto_colors=0
