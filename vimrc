@@ -184,7 +184,7 @@ function! LightlineFileencoding()
 endfunction
 
 function! LightlineFilename()
-  return expand('%:t') ==# '' ? '[No Name]' : expand('%:p:h:t') . '/' . expand('%:t')
+  return expand('%:t') ==# '' ? '[No Name]' : fnamemodify(expand("%"), ":~:.")
 endfunction
 
 function! LightlineFiletype()
