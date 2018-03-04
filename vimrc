@@ -164,3 +164,29 @@ end
 " Add fzf fuzzy file lookup
 set rtp+=/usr/local/opt/fzf
 nnoremap <silent> <C-p> :FZF<CR>
+
+" Lightline status line plugin
+let g:lightline = {
+    \ 'component_function': {
+    \   'fileformat': 'LightlineFileformat',
+    \   'fileencoding': 'LightlineFileencoding',
+    \   'filename': 'LightlineFilename',
+    \   'filetype': 'LightlineFiletype'
+    \ }
+  \ }
+
+function! LightlineFileformat()
+  return winwidth(0) > 70 ? &fileformat : ''
+endfunction
+
+function! LightlineFileencoding()
+  return winwidth(0) > 70 ? (strlen(&fenc) ? &fenc : &enc) : ''
+endfunction
+
+function! LightlineFilename()
+  return expand('%:t') ==# '' ? '[No Name]' : expand('%:p:h:t') . '/' . expand('%:t')
+endfunction
+
+function! LightlineFiletype()
+  return winwidth(0) > 70 ? (&filetype !=# '' ? &filetype : 'no ft') : ''
+endfunction
