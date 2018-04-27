@@ -165,6 +165,6 @@ _fzf_compgen_path() {
 alias rg="rg -i"
 
 function list_docker_tags() {
-  wget -q "https://registry.hub.docker.com/v1/repositories/$1/tags" -O - | jq -r .[].name
+  wget -q "https://registry.hub.docker.com/v1/repositories/$1/tags" -O - | jq -r '.[].name'
 }
 alias list-docker-tags=list_docker_tags
