@@ -17,3 +17,17 @@ endsnippet
 snippet assign
 Object.assign({}, ${1})
 endsnippet
+
+snippet component
+class ${1} extends Component /*:: <Props, State> */ {
+	constructor(props) {
+		super(props)
+
+		this.state = {}
+	}
+
+	render() {
+		${2}
+	}
+}
+endsnippet
