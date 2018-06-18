@@ -115,7 +115,7 @@ switchAllPanesToFolderInTmux()
   paneIndexes=("${(@f)$(tmux list-panes -F "#{pane_index}")}")
   for i in $paneIndexes
   do
-    tmux send-keys -t "$i" "cd $(pwd)" Enter
+    tmux send-keys -t "$i" "cd $(pwd) && clear" Enter
   done
   tmux select-pane -t "${paneIndexes[1]}"
 }
