@@ -53,6 +53,17 @@ justify-content: center;
 align-items: center;
 endsnippet
 
+snippet grid
+@supports (display: grid) {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-gap: 0.625rem;
+	justify-items: center;
+	justify-content: center;
+	align-content: start;
+}
+endsnippet
+
 # Foundation-specific
 
 snippet media
