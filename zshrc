@@ -128,7 +128,7 @@ alias nSpot="osascript -e 'tell application \"Spotify\" to next track'"
 # ImageMagick
 tojpeg()
 {
-convert $1 -strip -background white -interlace Plane -quality "95%" -mosaic -alpha remove ${1%.*}.jpg
+  parallel --will-cite -j 1 'convert {} -strip -background white -interlace Plane -quality "95%" -mosaic -alpha remove {.}.jpg' ::: $@
 }
 
 alias toJPEG=tojpeg
