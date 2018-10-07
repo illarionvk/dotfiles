@@ -74,12 +74,12 @@ snippet asset
 endsnippet
 
 snippet blank
-{% if ${1} and $1 != blank %}
-	${2}
-{% endif %}
+{%- if ${1} and $1 != blank -%}
+	${VISUAL}${2}
+{%- endif -%}
 endsnippet
 
-snippet capture
+snippet cap
 {%- capture ${1} -%}
 ${VISUAL}
 {%- endcapture -%}
