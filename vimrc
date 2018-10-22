@@ -191,3 +191,5 @@ endfunction
 function! LightlineFiletype()
   return winwidth(0) > 70 ? (&filetype !=# '' ? &filetype : 'no ft') : ''
 endfunction
+
+let g:rainbow_active = 1 " Activate Rainbow Parentheses
