@@ -1,3 +1,9 @@
+snippet uid "UUID" i
+`!p import uuid
+if not snip.c:
+  snip.rv = uuid.uuid1().hex`
+endsnippet
+
 snippet #{
 #{'${VISUAL}${1}'}
 endsnippet
@@ -57,12 +63,24 @@ snippet grid
 @supports (display: grid) {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-areas:
+	  "left center right";
 	grid-gap: 0.625rem;
 	justify-items: center;
 	justify-content: center;
 	align-items: start;
 	align-content: start;
 }
+endsnippet
+
+snippet animation
+animation-name: ${1};
+animation-duration: 0.5s;
+animation-iteration-count: 1;
+animation-direction: normal;
+animation-timing-function: ease-out;
+animation-fill-mode: forwards;
+animation-delay: 0s;
 endsnippet
 
 snippet modern

@@ -1,3 +1,15 @@
+snippet id "UUID" i
+`!p import uuid
+if not snip.c:
+  snip.rv = str(uuid.uuid1())`
+endsnippet
+
+snippet tag "Tag with UUID in hex encoding" i
+`!p import uuid
+if not snip.c:
+  snip.rv = uuid.uuid1().hex`
+endsnippet
+
 snippet flow
 /* @flow */
 endsnippet
