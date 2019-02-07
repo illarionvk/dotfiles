@@ -65,8 +65,8 @@ colorscheme gruvbox
 set synmaxcol=300
 
 " Highlight special characters
-set list
-set listchars=nbsp:¬,tab:>-,extends:»,precedes:«,trail:•
+set encoding=utf-8
+set list listchars=tab:»·,trail:·,nbsp:·
 
 " Map <Esc> to fd
 imap fd <Esc>
