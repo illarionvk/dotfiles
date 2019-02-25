@@ -68,3 +68,14 @@ h('${1:div}', {
 	${VISUAL}${3}
 ])
 endsnippet
+
+snippet test
+test('${1:Untitled Test}', function(t) {
+
+  t.test('${2:Untitled Subtest}', function (st) {
+
+    st.ok(true)
+    st.end()
+  })
+})
+endsnippet
