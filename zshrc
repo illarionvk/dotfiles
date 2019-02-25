@@ -78,6 +78,9 @@ export EDITOR='vim'
 # Compilation flags
 export ARCHFLAGS="-arch x86_64"
 
+# Tmuxp
+export DISABLE_AUTO_TITLE='true'
+
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 

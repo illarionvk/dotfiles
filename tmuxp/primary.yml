@@ -1,0 +1,58 @@
+session_name: primary
+start_directory: ~/dev/
+windows:
+  - window_name: window_one
+    # layout: '5195,191x55,0,0[191x44,0,0,1,191x10,0,45{95x10,0,45,9,95x10,96,45,26}]'
+    focus: true
+    layout: main-horizontal
+    options:
+      main-pane-height: 45
+    panes:
+      - 'pane'
+      - 'pane'
+      - 'pane'
+  - window_name: window_two
+    focus: true
+    layout: main-horizontal
+    options:
+      main-pane-height: 45
+    panes:
+      - 'pane'
+      - 'pane'
+      - 'pane'
+  - window_name: window_three
+    focus: true
+    layout: main-horizontal
+    options:
+      main-pane-height: 45
+    panes:
+      - 'pane'
+      - 'pane'
+      - 'pane'
+  - window_name: window_four
+    focus: true
+    layout: main-horizontal
+    options:
+      main-pane-height: 45
+    panes:
+      - 'pane'
+      - 'pane'
+      - 'pane'
+  - window_name: window_five
+    focus: true
+    layout: main-horizontal
+    options:
+      main-pane-height: 45
+    panes:
+      - 'pane'
+      - 'pane'
+      - 'pane'
+  - window_name: window_six
+    focus: true
+    layout: main-horizontal
+    options:
+      main-pane-height: 45
+    panes:
+      - 'pane'
+      - 'pane'
+      - 'pane'
