@@ -173,6 +173,9 @@ let g:lightline = {
     \   'fileencoding': 'LightlineFileencoding',
     \   'filename': 'LightlineFilename',
     \   'filetype': 'LightlineFiletype'
+    \ },
+    \ 'inactive': {
+    \   'left': [ [ 'filename', 'modified' ] ],
     \ }
   \ }
 
