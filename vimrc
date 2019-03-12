@@ -195,8 +195,6 @@ function! LightlineFiletype()
   return winwidth(0) > 70 ? (&filetype !=# '' ? &filetype : 'no ft') : ''
 endfunction
 
-let g:rainbow_active = 1 " Activate Rainbow Parentheses
-
 " ALE settings
 let g:ale_fix_on_save = 1
 let g:ale_fixers = {
