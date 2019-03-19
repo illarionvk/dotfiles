@@ -11,7 +11,7 @@ if not snip.c:
 endsnippet
 
 snippet flow
-/* @flow */
+/* @flow strict-local */
 endsnippet
 
 snippet flowfix
@@ -20,7 +20,7 @@ endsnippet
 
 snippet typedef
 /*::
-type ${1} = {
+type ${1:Props} = {
   ${2}
 };
 */
@@ -35,7 +35,7 @@ Object.assign({}, ${1})
 endsnippet
 
 snippet component
-class ${1} extends Component /*:: <Props, State> */ {
+class ${1:Comp} extends React.Component /*:: <Props, State> */ {
   /*::
   */
 
@@ -46,9 +46,17 @@ class ${1} extends Component /*:: <Props, State> */ {
 	}
 
 	render() {
-		${2}
+		return ${3:null}
 	}
 }
+endsnippet
+
+snippet fsc
+// Remember to import React as ES namespace
+// e.g., import * as React from 'react'
+const ${1:Comp} = (function $1(props) {
+  return ${2:null}
+} /*: React.StatelessFunctionalComponent<Props> */);
 endsnippet
 
 snippet exp
