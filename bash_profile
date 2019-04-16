@@ -12,9 +12,8 @@ PATH=/usr/texbin:$PATH # Add TeX to PATH
 source ~/.tmuxinator/tmuxinator.bash
 PATH=$PATH:$HOME/Library/Python/2.7/bin # Add Powerline to PATH
 
-#source /Users/hex/Library/Python/2.7/lib/python/site-packages/powerline/bindings/bash/powerline.sh
-
 # Include bashrc
 if [ -f ~/.bashrc ]; then
    source ~/.bashrc
 fi
+if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]; then . ~/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
