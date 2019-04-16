@@ -169,7 +169,11 @@ _fzf_compgen_path() {
 
 alias rg="rg -i"
 
-function list_docker_tags() {
+function list-docker-tags() {
   wget -q "https://registry.hub.docker.com/v1/repositories/$1/tags" -O - | jq -r '.[].name'
 }
-alias list-docker-tags=list_docker_tags
+
+# Compress PDF file with GhostScript
+function compress-pdf() {
+  gs -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -dPDFSETTINGS=/ebook -dCompatibilityLevel=1.4 -sOutputFile=$2 $1
+}
