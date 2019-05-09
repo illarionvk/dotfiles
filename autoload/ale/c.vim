@@ -86,8 +86,8 @@ function! ale#c#ParseCFlags(path_prefix, cflag_line) abort
         let l:next_option_index = l:option_index + 1
 
         " Join space-separated option
-        while l:next_option_index < len(l:split_lines) &&
-            \ stridx(l:split_lines[l:next_option_index], '-') != 0
+        while l:next_option_index < len(l:split_lines)
+        \&& stridx(l:split_lines[l:next_option_index], '-') != 0
             let l:next_option_index += 1
         endwhile
 
@@ -96,9 +96,9 @@ function! ale#c#ParseCFlags(path_prefix, cflag_line) abort
         call insert(l:split_lines, l:option, l:option_index)
 
         " Ignore invalid or conflicting options
-        if stridx(l:option, '-') != 0 ||
-            \ stridx(l:option, '-o') == 0 ||
-            \ stridx(l:option, '-c') == 0
+        if stridx(l:option, '-') != 0
+        \|| stridx(l:option, '-o') == 0
+        \|| stridx(l:option, '-c') == 0
             call remove(l:split_lines, l:option_index)
             let l:option_index = l:option_index - 1
         " Fix relative path
@@ -202,7 +202,7 @@ function! s:GetLookupFromCompileCommandsFile(compile_commands_file) abort
         let l:file_lookup[l:basename] = get(l:file_lookup, l:basename, []) + [l:entry]
 
         let l:dirbasename = tolower(fnamemodify(l:entry.directory, ':p:h:t'))
-        let l:dir_lookup[l:dirbasename] = get(l:dir_lookup, l:basename, []) + [l:entry]
+        let l:dir_lookup[l:dirbasename] = get(l:dir_lookup, l:dirbasename, []) + [l:entry]
     endfor
 
     if !empty(l:file_lookup) && !empty(l:dir_lookup)
@@ -219,9 +219,32 @@ function! ale#c#ParseCompileCommandsFlags(buffer, file_lookup, dir_lookup) abort
     " Search for an exact file match first.
     let l:basename = tolower(expand('#' . a:buffer . ':t'))
     let l:file_list = get(a:file_lookup, l:basename, [])
+    " A source file matching the header filename.
+    let l:source_file = ''
+
+    if empty(l:file_list) && l:basename =~? '\.h$\|\.hpp$'
+        for l:suffix in ['.c', '.cpp']
+            let l:key = fnamemodify(l:basename, ':r') . l:suffix
+            let l:file_list = get(a:file_lookup, l:key, [])
+
+            if !empty(l:file_list)
+                let l:source_file = l:key
+                break
+            endif
+        endfor
+    endif
 
     for l:item in l:file_list
-        if bufnr(l:item.file) is a:buffer && has_key(l:item, 'command')
+        " Load the flags for this file, or for a source file matching the
+        " header file.
+        if has_key(l:item, 'command')
+        \&& (
+        \   bufnr(l:item.file) is a:buffer
+        \   || (
+        \       !empty(l:source_file)
+        \       && l:item.file[-len(l:source_file):] is? l:source_file
+        \   )
+        \)
             return ale#c#ParseCFlags(l:item.directory, l:item.command)
         endif
     endfor
@@ -282,6 +305,20 @@ function! ale#c#GetMakeCommand(buffer) abort
     endif
 
     return ''
+endfunction
+
+function! ale#c#RunMakeCommand(buffer, Callback) abort
+    let l:command = ale#c#GetMakeCommand(a:buffer)
+
+    if empty(l:command)
+        return a:Callback(a:buffer, [])
+    endif
+
+    return ale#command#Run(
+    \   a:buffer,
+    \   l:command,
+    \   {b, output -> a:Callback(a:buffer, output)},
+    \)
 endfunction
 
 " Given a buffer number, search for a project root, and output a List
