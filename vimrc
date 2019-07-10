@@ -202,6 +202,7 @@ let g:ale_fixers = {
 \  'css': ['prettier'],
 \  'graphql': ['prettier'],
 \  'javascript': ['prettier'],
+\  'typescript': ['prettier'],
 \  'json': ['prettier'],
 \  'scss': ['prettier'],
 \}
