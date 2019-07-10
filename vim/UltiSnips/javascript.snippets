@@ -78,12 +78,7 @@ h('${1:div}', {
 endsnippet
 
 snippet test
-test('${1:Untitled Test}', function(t) {
-
-  t.test('${2:Untitled Subtest}', function (st) {
-
-    st.ok(true)
-    st.end()
-  })
+test('${1:Untitled Test}', async function(t) {
+	t.truthy(true)${3}
 })
 endsnippet
