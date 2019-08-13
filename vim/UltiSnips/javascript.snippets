@@ -82,3 +82,20 @@ test('${1:Untitled Test}', async function(t) {
 	t.truthy(true)${3}
 })
 endsnippet
+
+snippet tape
+test('${1:Untitled Test}', function(t) {
+	// eslint-disable-next-line no-extra-semi
+	;(async function() {
+		t.ok(true)
+		${2}
+	})()
+		.then(function() {
+			t.end()
+		})
+		.catch(function(err) {
+			t.error(err)
+			t.end()
+		})
+})
+endsnippet
