@@ -90,12 +90,7 @@ test('${1:Untitled Test}', function(t) {
 		t.ok(true)
 		${2}
 	})()
-		.then(function() {
-			t.end()
-		})
-		.catch(function(err) {
-			t.error(err)
-			t.end()
-		})
+		.then(() => t.end())
+		.catch((err) => t.end(err))
 })
 endsnippet
