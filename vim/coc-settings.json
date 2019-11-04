@@ -1,5 +1,6 @@
 {
+  "coc.preferences.diagnostic.displayByAle": true,
   "javascript.showUnused": false,
-  "javascript.validate.enable": false,
-  "typescript.validate.enable": false
+  "javascript.validate.enable": true,
+  "typescript.validate.enable": true
 }
