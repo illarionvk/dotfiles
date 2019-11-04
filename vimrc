@@ -103,10 +103,12 @@ set diffopt+=vertical
 autocmd FileType css setlocal foldmethod=indent nofoldenable shiftwidth=2 tabstop=2
 
 " Settings for Markdown files
-autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+" autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 autocmd FileType markdown setlocal spell spelllang=en_us,ru_yo,pl
 autocmd FileType markdown setlocal textwidth=80
+let g:vim_markdown_frontmatter=1
 
+" Settings for LaTeX files
 autocmd BufNewFile,BufReadPost *.tex setl ft=tex
 autocmd FileType tex setlocal textwidth=80 spell spelllang=en_us,ru_yo,pl
 autocmd FileType plaintex setlocal textwidth=80 spell spelllang=en_us,ru_yo,pl
