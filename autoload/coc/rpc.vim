@@ -23,6 +23,10 @@ function! coc#rpc#start_server()
   endif
 endfunction
 
+function! coc#rpc#started() abort
+  return !empty(s:client)
+endfunction
+
 function! coc#rpc#ready()
   if empty(s:client) || s:client['running'] == 0 | return 0 | endif
   return 1
@@ -47,18 +51,33 @@ function! coc#rpc#kill()
 endfunction
 
 function! coc#rpc#get_errors()
-  if empty(s:client) | return | endif
-  return s:client['stderrs']
+  return split(execute('messages'), "\n")
 endfunction
 
 function! coc#rpc#stop()
-  return coc#client#stop(s:name)
+  if empty(s:client)
+    return
+  endif
+  try
+    if s:is_vim
+      call job_stop(ch_getjob(s:client['channel']), 'term')
+    else
+      call jobstop(s:client['chan_id'])
+    endif
+  catch /.*/
+    " ignore
+  endtry
 endfunction
 
 function! coc#rpc#restart()
   if empty(s:client)
     call coc#rpc#start_server()
   else
+    for i in range(1, winnr('$'))
+      if getwinvar(i, 'float')
+        execute i.'wincmd c'
+      endif
+    endfor
     call coc#rpc#request('detach', [])
     sleep 100m
     let s:client['command'] = coc#util#job_command()
