@@ -8,5 +8,14 @@
 		"body": [
 			"export type ${1:MyType} = Infer<typeof $1>;"
 		]
+	},
+	"Insert test boilerplate": {
+		"prefix": "test",
+		"body": [
+			"import test from 'ava'",
+			"test('${1:My Test}', async function (t) {",
+			"  t.is(2*2, 4)",
+			"})"
+		]
 	}
 }
