@@ -23,6 +23,7 @@ in
     pkgs.exa
     pkgs.git
     pkgs.htop
+    pkgs.httpie
     pkgs.jq
     pkgs.mc
     pkgs.neovim
