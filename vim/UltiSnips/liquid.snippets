@@ -67,6 +67,16 @@ snippet assign
 {%- assign ${1} = ${2} -%}
 endsnippet
 
+snippet case
+{%- liquid
+	case ${1:my_variable}
+		when '${2:value}'
+			${3:render }
+		else
+			${4}
+	endcase -%}
+endsnippet
+
 # Shopify snippets
 
 snippet asset
