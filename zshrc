@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$HOME/node/bin:$HOME/bin:$HOME/.local/bin:$HOME/Library/Python/3.9/bin:/usr/local/bin:/usr/local/sbin:/usr/local/opt/python/libexec/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/TeX/texbin"
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$HOME/node/bin:$HOME/heroku/bin:$HOME/.local/bin:/usr/local/bin:/usr/local/sbin:/usr/local/opt/python/libexec/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/TeX/texbin"
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
