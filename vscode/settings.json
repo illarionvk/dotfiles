@@ -96,7 +96,7 @@
       "before": ["f", "d"]
     }
   ],
-  "vim.neovimPath": "/Users/hex/.nix-profile/bin/nvim",
+  "vim.neovimPath": "/usr/local/bin/nvim",
   "vim.normalModeKeyBindingsNonRecursive": [
     {
       "before": ["<leader>", "<space>"],
