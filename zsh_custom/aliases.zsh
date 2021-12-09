@@ -62,3 +62,7 @@ function compress-pdf() {
 function datagrip() {
   open -na "DataGrip" ./
 }
+
+function sha512-check-all() {
+  shasum -a 512 -c $1
+}
