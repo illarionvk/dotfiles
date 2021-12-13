@@ -2,6 +2,7 @@
 
 set -Eeuo pipefail
 
+brew install aria2
 brew install git
 brew install jq
 brew install mc
