@@ -85,6 +85,7 @@
   "terminal.integrated.enableBell": true,
   "terminal.integrated.enableFileLinks": false,
   "terminal.integrated.macOptionIsMeta": true,
+  "typescript.preferences.jsxAttributeCompletionStyle": "braces",
   "typescript.updateImportsOnFileMove.enabled": "never",
   "typescript.validate.enable": true,
   "vim.easymotion": false,
