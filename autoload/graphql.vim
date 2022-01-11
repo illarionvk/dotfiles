@@ -21,17 +21,15 @@
 " Language: GraphQL
 " Maintainer: Jon Parise <jon@indelible.org>
 
-if (exists('b:did_ftplugin'))
-  finish
-endif
-let b:did_ftplugin = 1
+function! graphql#has_syntax_group(group) abort
+  try
+    silent execute 'silent highlight ' . a:group
+  catch
+    return v:false
+  endtry
+  return v:true
+endfunction
 
-setlocal comments=:#
-setlocal commentstring=#\ %s
-setlocal formatoptions-=t
-setlocal iskeyword+=$,@-@
-setlocal softtabstop=2
-setlocal shiftwidth=2
-setlocal expandtab
-
-let b:undo_ftplugin = 'setlocal com< cms< fo< isk< sts< sw< et<'
+function! graphql#javascript_tags() abort
+  return get(g:, 'graphql_javascript_tags', ['gql', 'graphql', 'Relay.QL'])
+endfunction
