@@ -21,17 +21,22 @@
 " Language: GraphQL
 " Maintainer: Jon Parise <jon@indelible.org>
 
-if (exists('b:did_ftplugin'))
+if exists('*GetJavascriptGraphQLIndent') && !empty(&indentexpr)
   finish
 endif
-let b:did_ftplugin = 1
 
-setlocal comments=:#
-setlocal commentstring=#\ %s
-setlocal formatoptions-=t
-setlocal iskeyword+=$,@-@
-setlocal softtabstop=2
-setlocal shiftwidth=2
-setlocal expandtab
+runtime! indent/graphql.vim
 
-let b:undo_ftplugin = 'setlocal com< cms< fo< isk< sts< sw< et<'
+" Set the indentexpr with our own version that will call GetGraphQLIndent when
+" we're inside of a GraphQL string and otherwise defer to the base function.
+let b:indentexpr_base = &indentexpr
+setlocal indentexpr=GetJavascriptGraphQLIndent()
+
+function GetJavascriptGraphQLIndent()
+  let l:stack = map(synstack(v:lnum, 1), "synIDattr(v:val, 'name')")
+  if get(l:stack, 0, '') ==# 'graphqlTemplateString'
+    return GetGraphQLIndent()
+  endif
+
+  return eval(b:indentexpr_base)
+endfunction
