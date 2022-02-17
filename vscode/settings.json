@@ -67,6 +67,21 @@
   "javascript.updateImportsOnFileMove.enabled": "never",
   "javascript.validate.enable": true,
   "js/ts.implicitProjectConfig.checkJs": true,
+  "latex-workshop.latex.tools": [
+    {
+      "args": [
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "-xelatex",
+        "-outdir=%OUTDIR%",
+        "%DOC%"
+      ],
+      "command": "latexmk",
+      "env": {},
+      "name": "latexmk"
+    }
+  ],
   "liquid.format": false,
   "liquid.rules": {
     "format": false
