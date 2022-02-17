@@ -1,21 +1,23 @@
 {
-	// Place your snippets for typescript here. Each snippet is defined under a snippet name and has a prefix, body and
-	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
-	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the
-	// same ids are connected.
-	"Infer Superstruct type": {
-		"prefix": "infer_superstruct_type",
-		"body": [
-			"export type ${1:MyType} = Infer<typeof $1>;"
-		]
-	},
-	"Insert test boilerplate": {
-		"prefix": "test",
-		"body": [
-			"import test from 'ava'",
-			"test('${1:My Test}', async function (t) {",
-			"  t.is(2*2, 4)",
-			"})"
-		]
-	}
+  // Place your snippets for typescript here. Each snippet is defined under a snippet name and has a prefix, body and
+  // description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+  // $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the
+  // same ids are connected.
+  "Infer Superstruct type": {
+    "prefix": "infer_superstruct_type",
+    "body": ["export type ${1:MyType} = Infer<typeof $1>;"]
+  },
+  "Infer Zod type": {
+    "prefix": "infer_zod_type",
+    "body": ["export type ${1:MyType} = z.infer<typeof $1>;"]
+  },
+  "Insert test boilerplate": {
+    "prefix": "test",
+    "body": [
+      "import test from 'ava'",
+      "test('${1:My Test}', async function (t) {",
+      "  t.is(2*2, 4)",
+      "})"
+    ]
+  }
 }
