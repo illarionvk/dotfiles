@@ -7,11 +7,12 @@ alias path="echo $PATH | tr -s ':' '\n'"
 # Chande current directory in all Tmux panes
 switchAllPanesToFolderInTmux()
 {
-  cd $1
+  current_dir="$(pwd)"
+  cd "$1"
   paneIndexes=("${(@f)$(tmux list-panes -F "#{pane_index}")}")
   for i in $paneIndexes
   do
-    tmux send-keys -t "$i" "cd $(pwd) && clear" Enter
+    tmux send-keys -t "$i" "cd \"${current_dir}\" && clear" Enter
   done
   tmux select-pane -t "${paneIndexes[1]}"
 }
