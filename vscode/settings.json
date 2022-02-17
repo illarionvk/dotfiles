@@ -67,6 +67,12 @@
   "javascript.updateImportsOnFileMove.enabled": "never",
   "javascript.validate.enable": true,
   "js/ts.implicitProjectConfig.checkJs": true,
+  "json.schemas": [
+    {
+      "fileMatch": [".swcrc"],
+      "url": "https://json.schemastore.org/swcrc.json"
+    }
+  ],
   "latex-workshop.latex.tools": [
     {
       "args": [
