@@ -7,6 +7,7 @@ brew install git
 brew install jq
 brew install mc
 brew install neovim
+brew install pandoc
 brew install parallel
 brew install pv
 brew install ripgrep
