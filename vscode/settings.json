@@ -64,6 +64,7 @@
   "git.autofetch": false,
   "git.enabled": false,
   "git.path": null,
+  "javascript.suggest.autoImports": false,
   "javascript.updateImportsOnFileMove.enabled": "never",
   "javascript.validate.enable": true,
   "js/ts.implicitProjectConfig.checkJs": true,
@@ -103,6 +104,8 @@
   ],
   "search.exclude": {
     "**/*.code-search": true,
+    "**/*.next": true,
+    "**/*.storybook": true,
     "**/bower_components": true,
     "**/dist": true,
     "**/lib": true,
@@ -117,7 +120,8 @@
   "terminal.integrated.enableFileLinks": false,
   "terminal.integrated.macOptionIsMeta": true,
   "typescript.preferences.jsxAttributeCompletionStyle": "braces",
-  "typescript.updateImportsOnFileMove.enabled": "never",
+  "typescript.suggest.autoImports": false,
+  "typescript.updateImportsOnFileMove.enabled": "always",
   "typescript.validate.enable": true,
   "vim.easymotion": false,
   "vim.enableNeovim": true,
@@ -140,7 +144,7 @@
     },
     {
       "before": ["<leader>", "-"],
-      "commands": ["revealInExplorer"]
+      "commands": ["breadcrumbs.focusAndSelect"]
     },
     {
       "before": ["<leader>", "r", "f"],
