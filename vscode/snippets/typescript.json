@@ -11,11 +11,20 @@
     "prefix": "infer_zod_type",
     "body": ["export type ${1:MyType} = z.infer<typeof $1>;"]
   },
-  "Insert test boilerplate": {
-    "prefix": "test",
+  "Insert test file boilerplate": {
+    "prefix": "ava",
     "body": [
       "import test from 'ava'",
-      "test('${1:My Test}', async function (t) {",
+      "const TEST_NAME_PREFIX = '${1:My Test}' as const",
+      "test(`${TEST_NAME_PREFIX} given nothing`, async function (t) {",
+      "  t.is(2*2, 4)",
+      "})"
+    ]
+  },
+  "Insert test": {
+    "prefix": "test",
+    "body": [
+      "test(`${TEST_NAME_PREFIX} given nothing`, async function (t) {",
       "  t.is(2*2, 4)",
       "})"
     ]
