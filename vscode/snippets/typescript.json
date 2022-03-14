@@ -16,7 +16,7 @@
     "body": [
       "import test from 'ava'",
       "const TEST_NAME_PREFIX = '${1:My Test}' as const",
-      "test(`${TEST_NAME_PREFIX} given nothing`, async function (t) {",
+      "test('\\${TEST_NAME_PREFIX\\} given nothing`, async function (t) {",
       "  t.is(2*2, 4)",
       "})"
     ]
@@ -24,7 +24,7 @@
   "Insert test": {
     "prefix": "test",
     "body": [
-      "test(`${TEST_NAME_PREFIX} given nothing`, async function (t) {",
+      "test(`\\${TEST_NAME_PREFIX\\} given nothing`, async function (t) {",
       "  t.is(2*2, 4)",
       "})"
     ]
