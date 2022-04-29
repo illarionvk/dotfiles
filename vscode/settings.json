@@ -97,10 +97,7 @@
   "remote.containers.defaultExtensions": [
     "dbaeumer.vscode-eslint",
     "esbenp.prettier-vscode",
-    "jit-y.vscode-advanced-open-file",
-    "redhat.vscode-yaml",
-    "sleistner.vscode-fileutils",
-    "visualstudioexptteam.vscodeintellicode"
+    "sleistner.vscode-fileutils"
   ],
   "search.exclude": {
     "**/*.code-search": true,
