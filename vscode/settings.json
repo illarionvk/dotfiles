@@ -56,6 +56,13 @@
   "editor.wordBasedSuggestionsMode": "allDocuments",
   "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
   "editor.wordWrap": "on",
+  "emmet.excludeLanguages": [
+    "javascript",
+    "javascriptreact",
+    "markdown",
+    "typescript",
+    "typescriptreact"
+  ],
   "explorer.compactFolders": false,
   "explorer.enableDragAndDrop": false,
   "explorer.openEditors.visible": 9,
@@ -151,6 +158,10 @@
     {
       "before": ["<leader>", "r", "r"],
       "commands": ["editor.action.rename"]
+    },
+    {
+      "before": ["<leader>", "q"],
+      "commands": ["workbench.action.closeEditorsInGroup"]
     },
     {
       "after": ["g", "h"],
