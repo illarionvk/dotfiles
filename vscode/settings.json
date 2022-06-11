@@ -16,6 +16,7 @@
     "editor.snippetSuggestions": "none"
   },
   "[typescript]": {
+    "editor.bracketPairColorization.enabled": false,
     "editor.codeActionsOnSave": {
       "source.organizeImports": false
     },
