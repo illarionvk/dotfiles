@@ -47,7 +47,7 @@ alias rg="rg --smart-case"
 
 # List Docker image tags
 function list-docker-tags() {
-  wget -q "https://registry.hub.docker.com/v1/repositories/$1/tags" -O - | jq -r '.[].name'
+  wget -q "https://registry.hub.docker.com/v2/repositories/library/${1}/tags?page_size=1024" -O - | jq -r '.results[].name'
 }
 
 # Docker cleaning
