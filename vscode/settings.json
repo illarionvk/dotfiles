@@ -187,7 +187,6 @@
       "commands": ["editor.action.refactor"]
     }
   ],
-  "window.zoomLevel": 0,
   "workbench.colorCustomizations": {
     "[Alabaster]": {},
     "tree.indentGuidesStroke": "#669933",
