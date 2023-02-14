@@ -24,13 +24,13 @@
     "editor.codeActionsOnSave": {
       "source.organizeImports": false
     },
-    "editor.formatOnSave": true
+    "editor.formatOnSave": false
   },
   "[typescriptreact]": {
     "editor.codeActionsOnSave": {
       "source.organizeImports": false
     },
-    "editor.formatOnSave": true
+    "editor.formatOnSave": false
   },
   "breadcrumbs.filePath": "on",
   "breadcrumbs.symbolPath": "off",
