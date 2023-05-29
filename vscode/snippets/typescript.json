@@ -28,5 +28,11 @@
       "  t.is(2*2, 4)",
       "})"
     ]
+  },
+  "Parse HTMLElement": {
+    "prefix": "parse_html_element",
+    "body": [
+      "const ${1:element}: ${2:HTMLElement} | null = _$1 instanceof $2 ? _$1 : null"
+    ]
   }
 }
