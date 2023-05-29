@@ -115,6 +115,7 @@
     "**/*.code-search": true,
     "**/*.next": true,
     "**/*.storybook": true,
+    "**/assets": true,
     "**/bower_components": true,
     "**/dist": true,
     "**/lib": true,
