@@ -67,10 +67,6 @@ function sha512-check-all() {
   shasum -a 512 -c $1
 }
 
-function op() {
-  open $(~/core/fs/fuzzy-folder.sh)
-}
-
 function dn() {
   mc ${1:-.} $(~/core/fs/fuzzy-folder.sh)
 }

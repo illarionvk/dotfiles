@@ -15,6 +15,20 @@ BULLETTRAIN_PROMPT_ADD_NEWLINE=false
 BULLETTRAIN_RUBY_SHOW=false
 BULLETTRAIN_VIRTUALENV_SHOW=false
 
+prompt_print_week_number() {
+  prompt_segment blue white $(date '+W%V')
+}
+
+BULLETTRAIN_PROMPT_ORDER=(
+  time
+  print_week_number
+  status
+  custom
+  dir
+  git
+  cmd_exec_time
+)
+
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
