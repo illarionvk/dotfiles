@@ -16,7 +16,7 @@ BULLETTRAIN_RUBY_SHOW=false
 BULLETTRAIN_VIRTUALENV_SHOW=false
 
 prompt_print_week_number() {
-  prompt_segment blue white $(date '+W%V')
+  prompt_segment cyan black $(date '+W%V')
 }
 
 BULLETTRAIN_PROMPT_ORDER=(
