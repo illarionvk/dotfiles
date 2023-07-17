@@ -21,15 +21,16 @@
     "body": ["export type ${1:MyType} = z.infer<typeof $1>;"]
   },
   "Insert React component boilerplate": {
-    "prefix": "vfc",
+    "prefix": "fc",
     "body": [
-      "import type { VFC } from 'react'",
-      "import React from 'react'",
+      "// import { clsx } from 'clsx'",
+      "import type { FC } from 'react'",
+      "// import style from './style.module.scss'",
       "",
       "export type Props = {$0}",
       "",
-      "export const ProductPrimary: VFC<Props> = function () {",
-      "  return <div>{'Hello'}</div>",
+      "export const ${1:Component}: FC<Props> = () => {",
+      "  return null",
       "}"
     ]
   }
