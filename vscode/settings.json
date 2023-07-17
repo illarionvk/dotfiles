@@ -107,7 +107,7 @@
     "format": false
   },
   "redhat.telemetry.enabled": false,
-  "remote.containers.defaultExtensions": [
+  "dev.containers.defaultExtensions": [
     "dbaeumer.vscode-eslint",
     "esbenp.prettier-vscode",
     "sleistner.vscode-fileutils"
@@ -130,7 +130,7 @@
   "tabnine.experimentalAutoImports": false,
   "telemetry.telemetryLevel": "off",
   "terminal.integrated.enableBell": true,
-  "terminal.integrated.enableFileLinks": false,
+  "terminal.integrated.enableFileLinks": "off",
   "terminal.integrated.macOptionIsMeta": true,
   "typescript.preferences.importModuleSpecifier": "relative",
   "typescript.preferences.jsxAttributeCompletionStyle": "braces",
