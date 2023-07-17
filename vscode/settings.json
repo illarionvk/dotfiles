@@ -198,6 +198,7 @@
     "window.inactiveBorder": "#333"
   },
   "window.autoDetectColorScheme": true,
+  "workbench.colorTheme": "Alabaster",
   "workbench.preferredDarkColorTheme": "Alabaster Dark",
   "workbench.preferredLightColorTheme": "Alabaster",
   "workbench.editor.enablePreview": false,
