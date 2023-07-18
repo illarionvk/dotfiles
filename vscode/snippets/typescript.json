@@ -15,10 +15,24 @@
     "prefix": "ava",
     "body": [
       "import test from 'ava'",
+      "",
       "const TEST_NAME_PREFIX = '${1:My Test}' as const",
+      "",
       "test(`\\${TEST_NAME_PREFIX\\} given nothing`, async function (t) {",
       "  t.is(2*2, 4)",
-      "})"
+      "})",
+      "",
+      "const macro = test.macro<[number, number]>({",
+      "  exec: async (t, input, expected) => {",
+      "    const actual = input",
+      "    t.is(actual, expected)",
+      "  },",
+      "  title: (providedTitle = '', input) => {",
+      "    return `given \\${input\\} \\${providedTitle\\}`.trim()",
+      "  }",
+      "})",
+      "",
+      "test('should equal four', macro, 2*2, 4)"
     ]
   },
   "Insert test": {
