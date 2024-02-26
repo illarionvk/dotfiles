@@ -26,7 +26,6 @@ BULLETTRAIN_PROMPT_ORDER=(
   custom
   dir
   git
-  cmd_exec_time
 )
 
 # Set list of themes to pick from when loading at random
