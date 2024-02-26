@@ -22,5 +22,25 @@
   {
     "key": "ctrl+alt+cmd+p",
     "command": "extension.advancedOpenFile"
+  },
+  {
+    "key": "enter",
+    "command": "explorer.openToSide",
+    "when": "explorerViewletFocus && foldersViewVisible && !inputFocus"
+  },
+  {
+    "key": "enter",
+    "command": "search.action.openResultToSide",
+    "when": "fileMatchOrMatchFocus && searchViewletVisible"
+  },
+  {
+    "key": "d",
+    "command": "explorer.newFolder",
+    "when": "explorerViewletFocus && foldersViewVisible && !inputFocus"
+  },
+  {
+    "key": "shift+5",
+    "command": "explorer.newFile",
+    "when": "explorerViewletFocus && foldersViewVisible && !inputFocus"
   }
 ]
