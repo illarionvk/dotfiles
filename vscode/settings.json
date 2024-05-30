@@ -1,0 +1,253 @@
+{
+  "[clojure]": {
+    "editor.defaultFormatter": "betterthantomorrow.calva"
+  },
+  "[javascript]": {
+    "editor.formatOnSave": true
+  },
+  "[javascriptreact]": {
+    "editor.formatOnSave": true
+  },
+  "[liquid]": {
+    "editor.defaultFormatter": "sissel.shopify-liquid"
+  },
+  "[markdown]": {
+    "editor.acceptSuggestionOnEnter": "off",
+    "editor.parameterHints.enabled": false,
+    "editor.quickSuggestions": {
+      "comments": "off",
+      "other": "off",
+      "strings": "off"
+    },
+    "editor.renderWhitespace": "all",
+    "editor.snippetSuggestions": "none"
+  },
+  "[typescript]": {
+    "editor.bracketPairColorization.enabled": false,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "never"
+    },
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": false
+  },
+  "[typescript][typescriptreact]": {
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "never"
+    }
+  },
+  "[typescriptreact]": {
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "never"
+    },
+    "editor.formatOnSave": false
+  },
+  "accessibility.signals.terminalBell": {
+    "sound": "on"
+  },
+  "breadcrumbs.filePath": "on",
+  "breadcrumbs.symbolPath": "off",
+  "calva.keybindingsEnabled": false,
+  "calva.prettyPrintingOptions": {
+    "enabled": true,
+    "maxLength": 50,
+    "printEngine": "pprint",
+    "width": 80
+  },
+  "dev.containers.defaultExtensions": [
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "sleistner.vscode-fileutils"
+  ],
+  "editor.autoClosingBrackets": "never",
+  "editor.autoClosingOvertype": "never",
+  "editor.autoClosingQuotes": "never",
+  "editor.cursorStyle": "line",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.dragAndDrop": false,
+  "editor.fontFamily": "'Fira Code', Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 13,
+  "editor.formatOnSave": false,
+  "editor.guides.bracketPairs": "active",
+  "editor.insertSpaces": false,
+  "editor.lineNumbers": "on",
+  "editor.minimap.enabled": false,
+  "editor.quickSuggestions": {
+    "comments": false,
+    "other": true,
+    "strings": false
+  },
+  "editor.scrollBeyondLastLine": false,
+  "editor.stickyScroll.enabled": false,
+  "editor.suggestSelection": "first",
+  "editor.tabCompletion": "onlySnippets",
+  "editor.tabSize": 2,
+  "editor.wordBasedSuggestions": "matchingDocuments",
+  "editor.wordBasedSuggestionsMode": "allDocuments",
+  "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
+  "editor.wordWrap": "on",
+  "emmet.excludeLanguages": [
+    "javascript",
+    "javascriptreact",
+    "markdown",
+    "typescript",
+    "typescriptreact"
+  ],
+  "explorer.autoReveal": false,
+  "explorer.compactFolders": false,
+  "explorer.enableDragAndDrop": false,
+  "explorer.excludeGitIgnore": true,
+  "explorer.openEditors.visible": 9,
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+  "git.autofetch": false,
+  "git.enabled": false,
+  "git.path": null,
+  "github.copilot.editor.enableAutoCompletions": true,
+  "inlineChat.accessibleDiffView": "off",
+  "javascript.preferences.importModuleSpecifier": "relative",
+  "javascript.suggest.autoImports": false,
+  "javascript.updateImportsOnFileMove.enabled": "never",
+  "javascript.validate.enable": true,
+  "js/ts.implicitProjectConfig.checkJs": true,
+  "json.schemas": [
+    {
+      "fileMatch": [".swcrc"],
+      "url": "https://json.schemastore.org/swcrc.json"
+    }
+  ],
+  "latex-workshop.latex.tools": [
+    {
+      "args": [
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "-xelatex",
+        "-outdir=%OUTDIR%",
+        "%DOC%"
+      ],
+      "command": "latexmk",
+      "env": {},
+      "name": "latexmk"
+    }
+  ],
+  "liquid.format": false,
+  "liquid.rules": {
+    "format": false
+  },
+  "redhat.telemetry.enabled": false,
+  "search.exclude": {
+    "**/*.code-search": true,
+    "**/*.next": true,
+    "**/*.storybook": true,
+    "**/assets": true,
+    "**/bower_components": true,
+    "**/dist": true,
+    "**/lib": true,
+    "**/lib-test": true,
+    "**/node_modules": true,
+    "**/public": true
+  },
+  "search.quickOpen.history.filterSortOrder": "default",
+  "search.quickOpen.includeSymbols": false,
+  "search.useGlobalIgnoreFiles": true,
+  "search.useIgnoreFiles": true,
+  "search.useParentIgnoreFiles": true,
+  "tabnine.experimentalAutoImports": false,
+  "telemetry.telemetryLevel": "off",
+  "terminal.integrated.enableFileLinks": "off",
+  "terminal.integrated.enableVisualBell": true,
+  "terminal.integrated.macOptionIsMeta": true,
+  "typescript.preferences.importModuleSpecifier": "relative",
+  "typescript.preferences.jsxAttributeCompletionStyle": "braces",
+  "typescript.suggest.autoImports": true,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "typescript.validate.enable": true,
+  "vim.easymotion": false,
+  "vim.enableNeovim": true,
+  "vim.hlsearch": true,
+  "vim.insertModeKeyBindings": [
+    {
+      "after": ["<Esc>"],
+      "before": ["f", "d"]
+    }
+  ],
+  "vim.neovimPath": "/usr/local/bin/nvim",
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<leader>", "<space>"],
+      "commands": ["workbench.action.quickOpen"]
+    },
+    {
+      "before": ["<leader>", "f"],
+      "commands": ["editor.action.formatDocument"]
+    },
+    {
+      "before": ["<leader>", "-"],
+      "commands": ["workbench.files.action.showActiveFileInExplorer"]
+    },
+    {
+      "before": ["<leader>", "r", "c"],
+      "commands": ["inlineChat.start"]
+    },
+    {
+      "before": ["<leader>", "r", "f"],
+      "commands": ["editor.action.refactor"]
+    },
+    {
+      "before": ["<leader>", "r", "r"],
+      "commands": ["editor.action.rename"]
+    },
+    {
+      "before": ["<leader>", "q"],
+      "commands": ["workbench.action.closeEditorsInGroup"]
+    },
+    {
+      "after": ["g", "h"],
+      "before": ["K"]
+    },
+    {
+      "after": ["g", "h"],
+      "before": ["<leader>", "e"]
+    },
+    {
+      "after": ["editor.action.marker.next"],
+      "before": ["<leader>", "n", "e"]
+    }
+  ],
+  "vim.visualModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<leader>", "r", "c"],
+      "commands": ["inlineChat.start"]
+    },
+    {
+      "before": ["<leader>", "r", "f"],
+      "commands": ["editor.action.refactor"]
+    }
+  ],
+  "window.autoDetectColorScheme": true,
+  "workbench.colorCustomizations": {
+    "[Alabaster]": {},
+    "tree.indentGuidesStroke": "#669933",
+    "window.activeBorder": "#669933",
+    "window.inactiveBorder": "#333"
+  },
+  "workbench.colorTheme": "Alabaster",
+  "workbench.editor.enablePreview": false,
+  "workbench.editor.enablePreviewFromQuickOpen": false,
+  "workbench.editor.labelFormat": "medium",
+  "workbench.editor.showTabs": "single",
+  "workbench.preferredDarkColorTheme": "Alabaster Dark",
+  "workbench.preferredLightColorTheme": "Alabaster",
+  "workbench.settings.enableNaturalLanguageSearch": false,
+  "workbench.sideBar.location": "right",
+  "workbench.startupEditor": "none",
+  "workbench.tree.indent": 24,
+  "workbench.tree.renderIndentGuides": "always",
+  "zenMode.centerLayout": false,
+  "zenMode.fullScreen": false,
+  "zenMode.hideActivityBar": false,
+  "zenMode.hideLineNumbers": false,
+  "zenMode.hideStatusBar": false,
+  "zenMode.showTabs": "single"
+}

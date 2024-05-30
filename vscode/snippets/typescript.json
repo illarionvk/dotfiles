@@ -1,0 +1,52 @@
+{
+  // Place your snippets for typescript here. Each snippet is defined under a snippet name and has a prefix, body and
+  // description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+  // $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the
+  // same ids are connected.
+  "Infer Superstruct type": {
+    "prefix": "infer_superstruct_type",
+    "body": ["export type ${1:MyType} = Infer<typeof $1>;"]
+  },
+  "Infer Zod type": {
+    "prefix": "infer_zod_type",
+    "body": ["export type ${1:MyType} = z.infer<typeof $1>;"]
+  },
+  "Insert test file boilerplate": {
+    "prefix": "ava",
+    "body": [
+      "import test from 'ava'",
+      "",
+      "const TEST_NAME_PREFIX = '${1:My Test}' as const",
+      "",
+      "test(`\\${TEST_NAME_PREFIX\\} given nothing`, async function (t) {",
+      "  t.is(2*2, 4)",
+      "})",
+      "",
+      "const macro = test.macro<[number, number]>({",
+      "  exec: async (t, input, expected) => {",
+      "    const actual = input",
+      "    t.is(actual, expected)",
+      "  },",
+      "  title: (providedTitle = '', input) => {",
+      "    return `given \\${input\\} \\${providedTitle\\}`.trim()",
+      "  }",
+      "})",
+      "",
+      "test('should equal four', macro, 2*2, 4)"
+    ]
+  },
+  "Insert test": {
+    "prefix": "test",
+    "body": [
+      "test(`\\${TEST_NAME_PREFIX\\} given nothing`, async function (t) {",
+      "  t.is(2*2, 4)",
+      "})"
+    ]
+  },
+  "Parse HTMLElement": {
+    "prefix": "parse_html_element",
+    "body": [
+      "const ${1:element}: ${2:HTMLElement} | null = _$1 instanceof $2 ? _$1 : null"
+    ]
+  }
+}

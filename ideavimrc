@@ -1,0 +1,44 @@
+set gdefault
+
+" Case-insensitive searching.
+" But case-sensitive if expression contains a capital letter.
+set ignorecase
+set smartcase
+set incsearch
+set hlsearch
+
+set ideajoin
+set clipboard+=ideaput
+
+set surround
+set commentary
+
+set visualbell
+set noerrorbells
+
+let mapleader = "\"
+
+imap fd <Esc>
+" set timeoutlen=1000
+
+" Quicker window movement
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+
+" Maximize editor and hide all other drawers
+nmap <leader>z  :action HideAllWindows<CR>
+nmap <C-a>z     :action HideAllWindows<CR>
+
+" IDE Actions
+nmap gd              :action GotoDeclaration<CR>
+nmap gD              :action FindUsages<CR>
+nmap <leader><Space> :action GotoFile<CR>
+nmap <leader>-       :action SelectInProjectView<CR>
+nmap <leader>`       :action RecentFiles<CR>
+nmap <leader>f       :action ReformatWithPrettierAction<CR>
+nmap <leader>r       :action Refactorings.QuickListPopupAction<CR>
+nmap <leader>e       :action ShowErrorDescription<CR>
+nmap <leader>s       :action FindInPath<CR>
+nmap <leader>ne      :action GotoNextError<CR>

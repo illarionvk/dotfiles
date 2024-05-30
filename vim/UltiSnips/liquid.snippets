@@ -1,0 +1,130 @@
+# Generic Tags
+snippet todo
+<!-- TODO ${1} -->
+endsnippet
+
+snippet %
+{% ${1} %}${2}
+endsnippet
+
+snippet %%
+{% ${1:tag_name} %}
+	${2}
+{% end$1 %}
+endsnippet
+
+snippet {
+{{ ${1} }}${2}
+endsnippet
+
+# Template Tags
+
+# Enter visual mode, press <tab>, insert #, press <tab> again
+snippet #
+{% comment %}
+${VISUAL}${1}
+{% endcomment %}
+endsnippet
+
+snippet comment
+{% comment %}
+${VISUAL}${1}
+{% endcomment %}
+endsnippet
+
+snippet for
+{%- for ${1} in ${2} -%}
+	${3}
+{%- endfor -%}
+endsnippet
+
+snippet if
+{%- if ${1} -%}
+	${2}
+{%- endif -%}
+endsnippet
+
+snippet ife
+{%- if ${1} -%}
+	${2}
+{%- else -%}
+	${3}
+{%- endif -%}
+endsnippet
+
+snippet el
+{%- else -%}
+	${1}
+endsnippet
+
+snippet unless
+{%- unless ${1} -%}
+	${2}
+{%- endunless -%}
+endsnippet
+
+snippet assign
+{%- assign ${1} = ${2} -%}
+endsnippet
+
+snippet case
+{%- liquid
+	case ${1:my_variable}
+		when '${2:value}'
+			${3:render }
+		else
+			${4}
+	endcase -%}
+endsnippet
+
+# Shopify snippets
+
+snippet asset
+{{ '${1}' | asset_url }}
+endsnippet
+
+snippet blank
+{%- if ${1} and $1 != blank -%}
+	${VISUAL}${2}
+{%- endif -%}
+endsnippet
+
+snippet cap
+{%- capture ${1} -%}
+${VISUAL}
+{%- endcapture -%}
+endsnippet
+
+snippet inc
+{%- include '${1}' -%}
+endsnippet
+
+snippet render
+{%- render '${1}' -%}
+endsnippet
+
+snippet section
+{% section '${1}' %}
+endsnippet
+
+snippet params
+{% comment %}Snippet Parameters -->{% endcomment %}
+${VISUAL}${1}
+{% comment %}<-- Snippet Parameters{% endcomment %}
+endsnippet
+
+# Jekyll-specific snippets
+snippet hl
+{% highlight ${1} %}
+	${VISUAL}${2}
+{% endhighlight %}
+endsnippet
+
+# Meta snippets
+
+snippet style "insert CSS Module style name" i
+<$ style.${1} $>
+endsnippet
+
+
+# vim:ft=snippets:

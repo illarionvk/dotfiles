@@ -1,0 +1,57 @@
+# ~/.tmuxinator/primary.yml
+
+name: primary
+root: ~/dev/
+
+# Optional tmux socket
+# socket_name: foo
+
+# Runs before everything. Use it to start daemons etc.
+# pre: sudo /etc/rc.d/mysqld start
+
+# Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
+# pre_window: rbenv shell --unset
+
+# Pass command line options to tmux. Useful for specifying a different tmux.conf.
+# tmux_options: -f ~/.tmux.mac.conf
+
+# Change the command to call tmux.  This can be used by derivatives/wrappers like byobu.
+# tmux_command: byobu
+
+windows:
+  - window_one:
+      layout: 5195,191x55,0,0[191x44,0,0,1,191x10,0,45{95x10,0,45,9,95x10,96,45,26}]
+      panes:
+        - #empty
+        - #empty
+        - #empty
+  - window_two:
+      layout: 5195,191x55,0,0[191x44,0,0,1,191x10,0,45{95x10,0,45,9,95x10,96,45,26}]
+      panes:
+        - #empty
+        - #empty
+        - #empty
+  - window_three:
+      layout: 5195,191x55,0,0[191x44,0,0,1,191x10,0,45{95x10,0,45,9,95x10,96,45,26}]
+      panes:
+        - #empty
+        - #empty
+        - #empty
+  - window_four:
+      layout: 5195,191x55,0,0[191x44,0,0,1,191x10,0,45{95x10,0,45,9,95x10,96,45,26}]
+      panes:
+        - #empty
+        - #empty
+        - #empty
+  - window_five:
+      layout: 5195,191x55,0,0[191x44,0,0,1,191x10,0,45{95x10,0,45,9,95x10,96,45,26}]
+      panes:
+        - #empty
+        - #empty
+        - #empty
+  - window_six:
+      layout: 5195,191x55,0,0[191x44,0,0,1,191x10,0,45{95x10,0,45,9,95x10,96,45,26}]
+      panes:
+        - #empty
+        - #empty
+        - #empty

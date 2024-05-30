@@ -1,0 +1,188 @@
+snippet eid "Empty UUID" i
+00000000-0000-0000-0000-000000000000
+endsnippet
+
+snippet ets "Empty timestamp" i
+2099-01-01T00:00:00.000Z
+endsnippet
+
+snippet id "UUID" i
+`!p import uuid
+if not snip.c:
+  snip.rv = str(uuid.uuid4())`
+endsnippet
+
+snippet tag "Tag with UUID in hex encoding" i
+`!p import uuid
+if not snip.c:
+  snip.rv = uuid.uuid4().hex`
+endsnippet
+
+snippet flow
+/* @flow ${1:strict-local }*/
+endsnippet
+
+snippet flowfix
+// $FlowFixMe
+endsnippet
+
+snippet typedef
+/*::
+type ${1:Props} = {
+  ${2}
+};
+*/
+endsnippet
+
+snippet "typei?m?p?o?r?t?" "Type import in JSDoc" r
+/**
+	* @typedef { import("${1}").${2:MyType} } $2
+	*/
+endsnippet
+
+snippet type
+/** @type {${1:unknown}} ${2}*/
+endsnippet
+
+snippet assign
+Object.assign({}, ${1})
+endsnippet
+
+snippet component
+class ${1:Comp} extends React.Component /*:: <Props, State> */ {
+  /*::
+  */
+
+	constructor(props /*: Props */) {
+		super(props)
+
+		this.state = {}
+	}
+
+	render() {
+		return ${3:null}
+	}
+}
+endsnippet
+
+snippet fsc
+// Remember to import React as ES namespace
+import * as React from 'react'
+export const ${1:Comp} = (function $1(props) {
+  return ${2:null}
+} /*: React.StatelessFunctionalComponent<Props> */);
+endsnippet
+
+snippet exp
+module.exports = {
+	${1}
+}
+endsnippet
+
+snippet frozen
+Object.freeze({})
+endsnippet
+
+snippet h
+h('${1:div}', {
+	className: classNames('${2}')
+}, [
+	${VISUAL}${3}
+])
+endsnippet
+
+snippet test
+// 'use strict'
+// const tap = require('tap')
+// import tap from 'tap'
+
+tap.test('${1:Untitled Test}', async function(t) {
+	t.ok(true)
+	${2}
+})
+endsnippet
+
+snippet tape
+// const test = require('tape')
+test('${1:Untitled Test}', function(t) {
+	// eslint-disable-next-line no-extra-semi
+	;(async function() {
+		t.ok(true)
+		${2}
+	})()
+		.then(() => t.end())
+		.catch((err) => t.end(err))
+})
+endsnippet
+
+snippet jest
+import { expect, test } from '@jest/globals'
+
+test('${1:Untitled Test}', async function() {
+	expect(${2:true}).${3:toBeTruthy()}
+})
+endsnippet
+
+snippet window
+if (typeof window === 'undefined') {
+  ${1}
+}
+endsnippet
+
+snippet req
+const { ${2} } = require('${1}');
+endsnippet
+
+snippet "smst?a?t?e?" "State machine state test" r
+t.strictSame(
+	iter.next(),
+	{
+		done: false,
+		value: {
+			...machine.state,
+			name: ${1:IDLE}
+		}
+	},
+	'should yield $1 state${2}'
+)
+endsnippet
+
+snippet "smc?t?x?" "State machine context call test" r
+t.strictSame(
+	iter.next(),
+	{
+		done: false,
+		value: {
+			__type: 'call',
+			func: context.${1:func},
+			args: [${2}]
+		}
+	},
+	'should call $1()'
+)
+endsnippet
+
+snippet "smd?o?n?e?" "State machine complete test" r
+t.deepEqual(
+	iter.next(),
+	{
+		done: true,
+		value: undefined
+	},
+	'should complete'
+)
+endsnippet
+
+snippet "gql" "GraphQL comment" r
+export const query = /* GraphQL */ \`
+${VISUAL}
+\`
+endsnippet
+
+snippet "gqlta?g?" "GraphQL tag" r
+import ${1:gql} from 'graphql-tag'
+
+export const query = $1\`
+${VISUAL}
+\`
+endsnippet

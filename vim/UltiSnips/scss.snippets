@@ -1,0 +1,120 @@
+snippet uid "UUID" i
+`!p import uuid
+if not snip.c:
+  snip.rv = uuid.uuid1().hex`
+endsnippet
+
+snippet #{
+#{'${VISUAL}${1}'}
+endsnippet
+
+snippet chead
+/* ===================================================== */
+/* ${1} */
+/* ===================================================== */
+endsnippet
+
+snippet base64
+url(data:image/svg+xml;base64,$1);
+endsnippet
+
+snippet center
+transform: translateX(-50%) translateY(-50%) translateZ(0);
+endsnippet
+
+snippet bg
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+background-color: #fff;
+endsnippet
+
+snippet abs
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+margin: 0;
+padding: 0;
+overflow: hidden;
+endsnippet
+
+snippet placeholder
+display: block;
+position: relative;
+width: 100%;
+height: 0;
+overflow: hidden;
+padding-bottom: 100%;
+background-size: contain;
+background-position: center;
+background-repeat: no-repeat;
+endsnippet
+
+snippet flex
+display: flex;
+flex-flow: row nowrap;
+justify-content: center;
+align-items: center;
+endsnippet
+
+snippet grid
+@supports (display: grid) {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-areas:
+	  "left center right";
+	grid-gap: 0.625rem;
+	justify-items: center;
+	justify-content: center;
+	align-items: start;
+	align-content: start;
+}
+endsnippet
+
+snippet animation
+animation-name: ${1};
+animation-duration: 0.5s;
+animation-iteration-count: 1;
+animation-direction: normal;
+animation-timing-function: ease-out;
+animation-fill-mode: forwards;
+animation-delay: 0s;
+endsnippet
+
+snippet modern
+@include modern() {
+	${VISUAL}${1}
+}
+endsnippet
+
+snippet lint
+// stylelint-disable
+${VISUAL}${1}
+// stylelint-enable
+endsnippet
+
+# Foundation-specific
+
+snippet media
+@include breakpoint(${1}) {
+	${VISUAL}${2}
+}
+endsnippet
+
+snippet mm
+@media #{$${1}} {
+	${VISUAL}${2}
+}
+endsnippet
+
+# Shopify-specific
+
+snippet asset
+url('#{"{{ '${1}' | asset_url }}"}')
+endsnippet
+
+snippet set
+#{'{{ settings.${1} }}'}
+endsnippet

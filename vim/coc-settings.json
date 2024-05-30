@@ -1,0 +1,17 @@
+{
+  "coc.preferences.snippets.enable": false,
+  "diagnostic.displayByAle": true,
+  "javascript.format.enabled": false,
+  "javascript.showUnused": false,
+  "javascript.validate.enable": false,
+  "json.format.enable": false,
+  "suggest.highPrioritySourceLimit": 10,
+  "suggest.lowPrioritySourceLimit": 5,
+  "suggest.maxCompleteItemCount": 15,
+  "suggest.minTriggerInputLength": 3,
+  "tsserver.enableJavascript": true,
+  "tsserver.implicitProjectConfig.checkJs": false,
+  "typescript.format.enabled": false,
+  "typescript.showUnused": false,
+  "typescript.validate.enable": false
+}
